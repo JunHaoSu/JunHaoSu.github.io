@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2019%2F04%2F22%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <title><![CDATA[Java内存区域]]></title>
+    <url>%2F2019%2F04%2F23%2FJava%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%2F</url>
+    <content type="text"><![CDATA[Java内存分布虽然对于入门的Java初学者来说是透明的，上课念PPT的老师也永远不会跟你提及这些概念，顶多在继承封装多态上让你背一些概念性的东西，但是都说知其然知其所以然，作为Java虚拟机知识体系基础的Java内存是如何进行管理的呢？理解了Java虚拟机的运行原理，对于排除代码BUG和程序性能优化有非常大的好处 程序计数器类似于CPU内部的PC寄存器，保存着字节码指令地址．程序需要通过程序计数器的值来选取下一条需要执行的字节码指令．程序的分支，跳转，循环，异常处理，线程恢复都得靠程序计数器来完成．程序计数器保证了JAVA各线程执行时的井然有序，所以是线程私有的，各个线程独立存储． 如果执行的是Java方法，程序计数器存储的是正在执行的字节码指令的地址 如果正在执行的是Native方法，程序计数器为空(Undefined) 此内存区域是唯一一个没有规定任何OutOfMemoryError情况的区域 Java虚拟机栈Java虚拟机栈同样是线程私有的，是方法执行时的结构．描述的是方法执行时的内存模型．每个方法执行时都会创建栈帧，用于存储方法的信息．方法的调用和返回过程，对应着栈帧的入栈和出栈过程 栈帧包含信息包括局部变量表，操作数栈，动态链接，和方法的返回地址 局部变量表]]></content>
+      <categories>
+        <category>Java虚拟机</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>内存模型</tag>
+      </tags>
   </entry>
 </search>
