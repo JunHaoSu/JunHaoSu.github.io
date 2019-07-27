@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="SJH 的流水账">
 <meta property="og:description" content="坚持就是胜利，开始刷题之旅 题目给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。 你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。 示例:12345给定 nums = [2, 7, 11, 15], target = 9因为 nums[0] + nums[1] = 2 + 7 = 9所以返回">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-27T13:59:52.348Z">
+<meta property="og:updated_time" content="2019-04-28T01:18:55.520Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="两数之和">
 <meta name="twitter:description" content="坚持就是胜利，开始刷题之旅 题目给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。 你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。 示例:12345给定 nums = [2, 7, 11, 15], target = 9因为 nums[0] + nums[1] = 2 + 7 = 9所以返回">
@@ -298,7 +298,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/27/TwoSum/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="JunHao Su">
+      <meta itemprop="name" content="Jaxon Su">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpeg">
     </span>
@@ -389,7 +389,7 @@
 <p>你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。</p>
 <p>示例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">给定 nums = [2, 7, 11, 15], target = 9</span><br><span class="line"></span><br><span class="line">因为 nums[0] + nums[1] = 2 + 7 = 9</span><br><span class="line"></span><br><span class="line">所以返回 [0, 1]</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>读懂这道题后的第一反应就是暴力向后搜索。但是这样的复杂度是O(n^2),肯定没有这么简单。那么有什么查询方式是O(1)呢？第一反应是散列查找，也就是哈希查找。在java中。有HashMap类可以实现这个需求，那么代码可以是这个样子</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>读懂这道题后的第一反应就是暴力向后搜索。但是这样的复杂度是O(n^2),肯定没有这么简单。只能通过空间来换时间，那么有什么查询方式是O(1)呢？第一反应是散列查找，也就是哈希查找。在java中。有HashMap类可以实现这个需求，那么代码可以是这个样子</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="解法一"><a href="#解法一" class="headerlink" title="解法一"></a>解法一</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) &#123;</span><br><span class="line">        //初始化一个int对应int的hashmap</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; m = new HashMap&lt;Integer, Integer&gt;();</span><br><span class="line">        //初始化结果数组</span><br><span class="line">        int[] res = new int[2];</span><br><span class="line">        //将题目给定的数组放入hashmap中</span><br><span class="line">        for (int i = 0; i &lt; nums.length; i++) &#123;</span><br><span class="line">            m.put(nums[i], i);</span><br><span class="line">        &#125;</span><br><span class="line">        //开始搜索</span><br><span class="line">        for (int i = 0; i &lt; nums.length; i++) &#123;</span><br><span class="line">            //搜索值等于和减去当前值</span><br><span class="line">            int t = target - nums[i];</span><br><span class="line">            //在hashmap中搜索并且保证存在而且不等于当前值</span><br><span class="line">            if (m.containsKey(t) &amp;&amp; m.get(t) != i) &#123;</span><br><span class="line">                //对结果进行赋值，搜索到所以退出搜索</span><br><span class="line">                res[0] = i;</span><br><span class="line">                res[1] = m.get(t);</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>提交上述代码，会发现内存消耗很大，时间也只是9ms超过了80%的人。一定有更优的解法。百度后发现可以将两个操作合二为一。上述解法先是将数组放入hashmap中，然后再进行查找。可不可以边放边找呢？先全部放入就是拿到前面的数去找后面的数。边放边找就是拿着后面的数去找前面的数。仔细想想，确实是这个道理。那么试试？？</p>
 <h3 id="解法二"><a href="#解法二" class="headerlink" title="解法二"></a>解法二</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int[] twoSum(int[] nums, int target) &#123;</span><br><span class="line">        //初始化一个int对应int的hashmap</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; m = new HashMap&lt;Integer, Integer&gt;();</span><br><span class="line">        //初始化结果数组</span><br><span class="line">        int[] res = new int[2];</span><br><span class="line">        //开始查找</span><br><span class="line">        for (int i = 0; i &lt; nums.length; i++) &#123;</span><br><span class="line">            //如果hashmap中存在和减去当前数的数字</span><br><span class="line">            if(m.containsKey(target - nums[i]))&#123;</span><br><span class="line">                //赋值，表示查找到，用后数找前数，所以需要换一下位置</span><br><span class="line">                res[1]=i;</span><br><span class="line">                res[0]=m.get(target - nums[i]);</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">            //关键，每次循环都要放一个数到hashmap中，在查找中，拿着前数总是找不到后数的，因为还没有放进去，但是总会循环到后数，拿着后数的时候，前数已经放进去了，总是能找到的。所以这个方法很精妙，没有问题。</span><br><span class="line">            m.put(nums[i], i);</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -502,9 +502,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/images/avatar.jpeg" alt="JunHao Su">
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpeg" alt="Jaxon Su">
             
-              <p class="site-author-name" itemprop="name">JunHao Su</p>
+              <p class="site-author-name" itemprop="name">Jaxon Su</p>
               <p class="site-description motion-element" itemprop="description">爱折腾</p>
           </div>
 
@@ -515,7 +515,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -526,7 +526,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -537,7 +537,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -572,6 +572,12 @@
                     <a href="https://stackoverflow.com/users/9831877/bran-su" target="_blank" title="StackOverflow">
                       
                         <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://leetcode-cn.com/bran-su/" target="_blank" title="LeetCode">
+                      
+                        <i class="fa fa-fw fa-LeetCode"></i>LeetCode</a>
                   </span>
                 
             </div>
@@ -622,7 +628,7 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">JunHao Su</span>
+  <span class="author" itemprop="copyrightHolder">Jaxon Su</span>
 
   
 </div>
