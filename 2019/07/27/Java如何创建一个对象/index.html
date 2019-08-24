@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Java,Java虚拟机,">
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="爱折腾">
-<meta property="og:type" content="website">
-<meta property="og:title" content="SJH 的流水账">
-<meta property="og:url" content="http://yoursite.com/categories/杂记/index.html">
+<meta name="description" content="我们知道Java是面向对象的编码思维，但是你知道一个new语句到底做了什么吗?一个对象到底是如何进行创建，布局和访问的。 对象的创建 第一步，首先虚拟机在在遇到一条new语句的时候，首先会检查这个指令的参数是否能在常量池中定位到一个类的符号引用。并且将检查这个符号引用代表的类是否已经被加载，解析和初始化过。如果没有，则必须对这个类进行类加载。 第二步，类加载完成后，JVM会在java堆上为对象分配">
+<meta name="keywords" content="Java,Java虚拟机">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java如何创建一个对象">
+<meta property="og:url" content="http://yoursite.com/2019/07/27/Java如何创建一个对象/index.html">
 <meta property="og:site_name" content="SJH 的流水账">
-<meta property="og:description" content="爱折腾">
+<meta property="og:description" content="我们知道Java是面向对象的编码思维，但是你知道一个new语句到底做了什么吗?一个对象到底是如何进行创建，布局和访问的。 对象的创建 第一步，首先虚拟机在在遇到一条new语句的时候，首先会检查这个指令的参数是否能在常量池中定位到一个类的符号引用。并且将检查这个符号引用代表的类是否已经被加载，解析和初始化过。如果没有，则必须对这个类进行类加载。 第二步，类加载完成后，JVM会在java堆上为对象分配">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-08-24T12:13:29.659Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SJH 的流水账">
-<meta name="twitter:description" content="爱折腾">
+<meta name="twitter:title" content="Java如何创建一个对象">
+<meta name="twitter:description" content="我们知道Java是面向对象的编码思维，但是你知道一个new语句到底做了什么吗?一个对象到底是如何进行创建，布局和访问的。 对象的创建 第一步，首先虚拟机在在遇到一条new语句的时候，首先会检查这个指令的参数是否能在常量池中定位到一个类的符号引用。并且将检查这个符号引用代表的类是否已经被加载，解析和初始化过。如果没有，则必须对这个类进行类加载。 第二步，类加载完成后，JVM会在java堆上为对象分配">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/杂记/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/27/Java如何创建一个对象/">
 
 
 
 
 
-  <title>分类: 杂记 | SJH 的流水账</title>
+  <title>Java如何创建一个对象 | SJH 的流水账</title>
   
 
 
@@ -143,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -279,53 +281,192 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>杂记<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/27/Java如何创建一个对象/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jaxon Su">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SJH 的流水账">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/07/24/Try-with-Resources/" itemprop="url">
-              
-                <span itemprop="name">Try-with-Resources</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Java如何创建一个对象</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-24T08:25:00+08:00" content="2019-07-24">
-          07-24
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-27T20:45:37+08:00">
+                2019-07-27
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java虚拟机/" itemprop="url" rel="index">
+                    <span itemprop="name">Java虚拟机</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>我们知道Java是面向对象的编码思维，但是你知道一个new语句到底做了什么吗?一个对象到底是如何进行创建，布局和访问的。</p>
+<h2 id="对象的创建"><a href="#对象的创建" class="headerlink" title="对象的创建"></a>对象的创建</h2><ul>
+<li>第一步，首先虚拟机在在遇到一条new语句的时候，首先会检查这个指令的参数是否能在常量池中定位到一个类的符号引用。并且将检查这个符号引用代表的类是否已经被加载，解析和初始化过。如果没有，则必须对这个类进行类加载。</li>
+<li>第二步，类加载完成后，JVM会在java堆上为对象分配内存，内存大小在类加载的时候就已经确定了（这个是如何确定的呢？类加载完成以后，类的继承体系关系就确定了，因为在加载该类之前是要先加载父类的，所以对象的大小=对象头大小+父级继承链非静态成员域大小+当前加载类非静态成员域大小+内存对齐导致的padding。）。从堆中分配内存有两种方式，指针碰撞和空闲列表。</li>
+<li>第三步，初始化，将分配的内存区域初始化为零，不同类型有不同的初始化值。保证对象的字段不初始化也可使用。</li>
+<li>第四部，执行构造方法，这一步就是执行用户自定义的初始化方法，对数据进行初始化，至此对象创建完成。<a id="more"></a>
+</li>
+</ul>
+<h2 id="指针碰撞和空闲列表"><a href="#指针碰撞和空闲列表" class="headerlink" title="指针碰撞和空闲列表"></a>指针碰撞和空闲列表</h2><h3 id="指针碰撞"><a href="#指针碰撞" class="headerlink" title="指针碰撞"></a>指针碰撞</h3><p>如果内存规整，没有碎片，指针碰撞是一个很好的方法。将已使用的内存和未使用的内存分别分布在一个指针的两侧，这个指针就是一个分界点，当需要分配内存的时候，就将指针向空闲的一端移动与内存大小相同的距离。使用的GC搜集器：Serial, ParNew</p>
+<h3 id="空闲列表"><a href="#空闲列表" class="headerlink" title="空闲列表"></a>空闲列表</h3><p>如果内存是不规整的，有大量的碎片存在，JVM就维护一个列表，记录可用的内存块信息，当分配内存的操作发生的时候，就在这个列表中找到一个足够大的内存块分配给对象，并更新表格。使用的GC搜集器：CMS</p>
+<h3 id="如何进行选择内存分配方式"><a href="#如何进行选择内存分配方式" class="headerlink" title="如何进行选择内存分配方式"></a>如何进行选择内存分配方式</h3><p>选择那种分配方式是由Java堆是否规整决定的，而Java堆是否规整又是由所采用的垃圾搜集器是否带有压缩整理算法决定的。同时，还需要考虑对象创建在虚拟机中是非常频繁的行为，需要考虑线程安全的问题，指针碰撞会产生线程之间的冲突，一般解决办法是首先，保证了分配内存操作的原子性，然后预先为每个线程分配一小块内存，保证了他们之间互相不冲突。这块内存叫做本地线程分配缓冲(Thread Local Allocation Buffer, TLAB)。只有该线程用完了TLAB时，才需要同步锁定。虚拟机是否使用TLAB，由选项–XX:+/UseTLAB参数决定。</p>
+<h2 id="对象的内存分布"><a href="#对象的内存分布" class="headerlink" title="对象的内存分布"></a>对象的内存分布</h2><p>对象在内存中分为3个部分，分别是对象头，实例数据，以及对齐填充。</p>
+<h3 id="对象头"><a href="#对象头" class="headerlink" title="对象头"></a>对象头</h3><p>对象头主要分为Mark Word和类型指针。MardWord存储了哈希吗GC分代年龄，锁状态标志，线程持有的锁，偏向线程ID等。这部分数据长度在32、64位虚拟机内分别是32bit和64bit。类型指针指向类元数据的指针，用来确定对象是那一个类的实例。对象头是一个非固定的数据结构。如果对象是一个数组，对象头还要有一块用于记录数组长度的数据。</p>
+<h3 id="实例数据"><a href="#实例数据" class="headerlink" title="实例数据"></a>实例数据</h3><p>实例数据就是对象中定义的数据已经从父类继承的数据。</p>
+<h3 id="对齐填充"><a href="#对齐填充" class="headerlink" title="对齐填充"></a>对齐填充</h3><p>HotSpot虚拟机的自动内存管理系统要求对象起始地址必须是8字节的整数倍，所以必须要使用对齐填充来进行占位。保证对象的大小是8字节的整数倍。</p>
+<h2 id="对象的访问定位"><a href="#对象的访问定位" class="headerlink" title="对象的访问定位"></a>对象的访问定位</h2><p>对象在创建完之后，放在java堆中，但是是如何找到这个对象的呢？分为直接地址和句柄</p>
+<h3 id="句柄"><a href="#句柄" class="headerlink" title="句柄"></a>句柄</h3><p>在java堆中，会划分一个区域叫做句柄池，引用类型reference中存储的就是对象的句柄地址，句柄包含了对象的具体地址信息。移动对象不需要修改数据。</p>
+<h3 id="直接地址"><a href="#直接地址" class="headerlink" title="直接地址"></a>直接地址</h3><p>reference中直接存储对象的地址。速度快。</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/Java虚拟机/" rel="tag"># Java虚拟机</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/24/Try-with-Resources/" rel="next" title="Try-with-Resources">
+                <i class="fa fa-chevron-left"></i> Try-with-Resources
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/05/UML类图/" rel="prev" title="UML类图">
+                UML类图 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -333,6 +474,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -353,8 +498,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -450,6 +604,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#对象的创建"><span class="nav-number">1.</span> <span class="nav-text">对象的创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指针碰撞和空闲列表"><span class="nav-number">2.</span> <span class="nav-text">指针碰撞和空闲列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#指针碰撞"><span class="nav-number">2.1.</span> <span class="nav-text">指针碰撞</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#空闲列表"><span class="nav-number">2.2.</span> <span class="nav-text">空闲列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何进行选择内存分配方式"><span class="nav-number">2.3.</span> <span class="nav-text">如何进行选择内存分配方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象的内存分布"><span class="nav-number">3.</span> <span class="nav-text">对象的内存分布</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对象头"><span class="nav-number">3.1.</span> <span class="nav-text">对象头</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例数据"><span class="nav-number">3.2.</span> <span class="nav-text">实例数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对齐填充"><span class="nav-number">3.3.</span> <span class="nav-text">对齐填充</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象的访问定位"><span class="nav-number">4.</span> <span class="nav-text">对象的访问定位</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#句柄"><span class="nav-number">4.1.</span> <span class="nav-text">句柄</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#直接地址"><span class="nav-number">4.2.</span> <span class="nav-text">直接地址</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -610,6 +780,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

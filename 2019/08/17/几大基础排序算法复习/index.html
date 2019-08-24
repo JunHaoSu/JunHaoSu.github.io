@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="算法,C++,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="大学也毕业了，呆了一段时间公司，干的活多是琐碎的工作，提高了项目能力，但是对于编程基础的东西绝对不能丢，就像项目组最近在排查性能问题一样，如果程序员的基础扎实了，很难会出现性能的问题，节省时间和空间几乎成了本能的行为，又怎么会出现项目迭代过程中专门花时间进行性能瓶颈的排查呢？项目几经易手，原来的代码难改，逻辑混乱，对于业务不太熟悉的人来说，代码根本无从下手。所以就像破窗户一样只会越来越大。  不要">
+<meta name="keywords" content="算法,C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="几大基础排序算法复习">
+<meta property="og:url" content="http://yoursite.com/2019/08/17/几大基础排序算法复习/index.html">
+<meta property="og:site_name" content="SJH 的流水账">
+<meta property="og:description" content="大学也毕业了，呆了一段时间公司，干的活多是琐碎的工作，提高了项目能力，但是对于编程基础的东西绝对不能丢，就像项目组最近在排查性能问题一样，如果程序员的基础扎实了，很难会出现性能的问题，节省时间和空间几乎成了本能的行为，又怎么会出现项目迭代过程中专门花时间进行性能瓶颈的排查呢？项目几经易手，原来的代码难改，逻辑混乱，对于业务不太熟悉的人来说，代码根本无从下手。所以就像破窗户一样只会越来越大。  不要">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/08/17/几大基础排序算法复习/heap.webp">
+<meta property="og:updated_time" content="2019-08-24T12:15:24.733Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="几大基础排序算法复习">
+<meta name="twitter:description" content="大学也毕业了，呆了一段时间公司，干的活多是琐碎的工作，提高了项目能力，但是对于编程基础的东西绝对不能丢，就像项目组最近在排查性能问题一样，如果程序员的基础扎实了，很难会出现性能的问题，节省时间和空间几乎成了本能的行为，又怎么会出现项目迭代过程中专门花时间进行性能瓶颈的排查呢？项目几经易手，原来的代码难改，逻辑混乱，对于业务不太熟悉的人来说，代码根本无从下手。所以就像破窗户一样只会越来越大。  不要">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/17/几大基础排序算法复习/heap.webp">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/08/17/几大基础排序算法复习/">
+
+
+
+
+
+  <title>几大基础排序算法复习 | SJH 的流水账</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">SJH 的流水账</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">学习记录</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/17/几大基础排序算法复习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jaxon Su">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SJH 的流水账">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">几大基础排序算法复习</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-17T17:24:10+08:00">
+                2019-08-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法复习/" itemprop="url" rel="index">
+                    <span itemprop="name">算法复习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>大学也毕业了，呆了一段时间公司，干的活多是琐碎的工作，提高了项目能力，但是对于编程基础的东西绝对不能丢，就像项目组最近在排查性能问题一样，如果程序员的基础扎实了，很难会出现性能的问题，节省时间和空间几乎成了本能的行为，又怎么会出现项目迭代过程中专门花时间进行性能瓶颈的排查呢？项目几经易手，原来的代码难改，逻辑混乱，对于业务不太熟悉的人来说，代码根本无从下手。所以就像破窗户一样只会越来越大。</p>
+<blockquote>
+<p>不要容忍破窗户   出自《程序员修炼之——从小工到专家》</p>
+</blockquote>
+<p>所以我准备系统的复习大学期间的算法知识。先从常用的排序和查找开始。<br><a id="more"></a></p>
+<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><p>冒泡排序是大学中学习C++后接触到的的第一个算法，算法思想是每次比较相邻的两个数，大的向后排，不停的后移，每经过一轮，就会有一个大数冒到最后去，俗称冒泡法。这是个稳定的排序算法，无论数据如何排列，程序经过的步骤是一样的。不会因为数据的排列不同而少做处理。</p>
+<h3 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//冒泡排序</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bubble_sort</span><span class="params">(<span class="keyword">int</span> *<span class="built_in">array</span>,<span class="keyword">int</span> length)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">array</span> == <span class="literal">NULL</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> flag=<span class="number">1</span>;</span><br><span class="line">    <span class="comment">//flag的作用是记录上一轮是否发生了交换，</span></span><br><span class="line">    <span class="comment">//如果没有，那就说明已经排好了序，直接退出</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length - <span class="number">1</span>&amp;&amp;flag; i++)  </span><br><span class="line">    &#123;</span><br><span class="line">        flag=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; length - i - <span class="number">1</span>; j++) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">array</span>[j] &gt; <span class="built_in">array</span>[j+<span class="number">1</span>]) </span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> temp = <span class="built_in">array</span>[j];</span><br><span class="line">                <span class="built_in">array</span>[j] = <span class="built_in">array</span>[j+<span class="number">1</span>];</span><br><span class="line">                <span class="built_in">array</span>[j+<span class="number">1</span>] = temp;</span><br><span class="line">                flag=<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路整理"><a href="#思路整理" class="headerlink" title="思路整理"></a>思路整理</h3><p>原始的冒泡排序是这样的，两层循环，外层执行一次表示一轮，每执行一次都代表了一个大数已经冒出去了，内层循环表示相邻两个数之间的比较，并且比较的指针位置随着循环的执行在不停地向后移动。循环中if判断表示两个数之间交换位置。上述方法和课本学习的原始冒泡排序不太一样，他加入了一个标志位flag，这个标志位记录了本轮有没有进行过数字位置的变动，如果进行到某一轮，每一个数的位置都没有发生变化，那么就代表所有的数字都已经到了他该放置的位置。所以排序就结束了，直接退出循环。</p>
+<ul>
+<li>最佳情况：O(n)</li>
+<li>最差情况：O(n^2)</li>
+<li>平均时间复杂度：O(n^2)</li>
+<li>空间复杂度为O(1)</li>
+<li>稳定排序算法</li>
+</ul>
+<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><p>插入排序使用了和冒泡不一样的思想，他的思路不是冒泡那种根据频繁变动位置来处理，而是在一轮中拿出一个基准值来进行判断。他的思路是这样的，默认第一轮最左边的数是最小的，所以第一轮不进行，直接拿左数第二个数作为第一个基准值。并对已经排序的数组中从右向左比较，如果比这个数大，向后挪一个位置，相当于占用了刚刚基准值的位置，直到找到一个位置上的数比基准值小，那么基准值就插入到这个数的后面，如果比这个基准值小，那么前面的所有数都比这个基准值小，本轮结束。直到所有的数都作为基准值进行过一侧比较，整个算法结束。</p>
+<h3 id="算法实现-1"><a href="#算法实现-1" class="headerlink" title="算法实现"></a>算法实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//插入排序</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert_sort</span><span class="params">(<span class="keyword">int</span> *<span class="built_in">array</span>,<span class="keyword">int</span> length)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">array</span> == <span class="literal">NULL</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;length;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> j=i<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">int</span> temp=<span class="built_in">array</span>[i];</span><br><span class="line">        <span class="keyword">while</span>(<span class="built_in">array</span>[j]&gt;temp&amp;&amp;j&gt;=<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">array</span>[j+<span class="number">1</span>]=<span class="built_in">array</span>[j];</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">array</span>[j+<span class="number">1</span>]=temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h3><ul>
+<li>最佳情况：O(n)</li>
+<li>最坏情况：O(n^2)</li>
+<li>平均时间复杂度：O(n^2)</li>
+<li>空间复杂度：O(1)</li>
+<li>稳定排序算法</li>
+</ul>
+<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><p>快速排序是一个对冒泡排序的一大改进，冒泡排序采用的是挨个比较的办法，快速排序的思想则是分治法，取出一个数，将所有比这个数小的放在左边，比这个数大的放在右边。这样会产生两个子数组，然后在这两个子数组中分别再采用相同的策略，直到不能再分，这样处理的步骤会比冒泡排序少很多。采用的是分治递归的思想。 </p>
+<p>那么如何处理基准值比较这个逻辑呢？常用的是挖坑法。取出头部第一个数，设置头尾两个指针，先从尾部开始向前移动尾指针，出现第一个比基准数小的数就放置在基准数留下的坑中，此时该数的原始位置就成了一个新的坑位。然后再从头部向后移动头部指针，将第一个大于基准数的数向后挪，放置在刚刚新的坑位上。这样交替移动头尾指针，直到最后头尾指针相遇，此时最后一个坑位就是相遇的地方，将基准数填到这个位置，一轮排序就结束了。</p>
+<p>然后使用相同的策略对基准数左右的两个子数组进行排序，同样是调用一轮排序的算法。只不过把左子数组的尾指针换成第一轮的基准数左边的位置，把右子数组的头指针换成了基准数右边的位置而已。直到递归的把所有的数全部排完。</p>
+<h3 id="算法实现-2"><a href="#算法实现-2" class="headerlink" title="算法实现"></a>算法实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//快速排序</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">quick_sort</span><span class="params">(<span class="keyword">int</span> *<span class="built_in">array</span>,<span class="keyword">int</span> _left,<span class="keyword">int</span> _right)</span></span>&#123;</span><br><span class="line">    <span class="comment">//挖坑法</span></span><br><span class="line">    <span class="keyword">if</span>(_left&lt;_right)&#123;</span><br><span class="line">        <span class="keyword">int</span> left=_left;<span class="comment">//左指针</span></span><br><span class="line">        <span class="keyword">int</span> right=_right;<span class="comment">//右指针</span></span><br><span class="line">        <span class="keyword">int</span> key=<span class="built_in">array</span>[_left];<span class="comment">//将数组第一个数作为基准值</span></span><br><span class="line">        <span class="keyword">while</span>(left&lt;right)&#123;</span><br><span class="line">            <span class="keyword">while</span>(right&gt;left&amp;&amp;key&lt;=<span class="built_in">array</span>[right])&#123;</span><br><span class="line">                <span class="comment">//从右向左找到第一个小于基准值的值</span></span><br><span class="line">                right--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">array</span>[left]=<span class="built_in">array</span>[right];</span><br><span class="line">            <span class="comment">//将右指针的值赋给左指针，第一次会覆盖基准值</span></span><br><span class="line">            <span class="keyword">while</span>(right&gt;left&amp;&amp;key&gt;=<span class="built_in">array</span>[left])&#123;</span><br><span class="line">                <span class="comment">//从左向右找到第一个大于基准值的值</span></span><br><span class="line">                left++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">array</span>[right]=<span class="built_in">array</span>[left];</span><br><span class="line">            <span class="comment">//将左指针的值赋给右指针，会覆盖掉刚刚右指针多出来的旧位置</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">array</span>[left]=key;<span class="comment">//最后左右指针归于中间一处，此处放回基准值</span></span><br><span class="line">        <span class="keyword">return</span> left;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//快速排序递归实现</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quick_sort_recursion</span><span class="params">(<span class="keyword">int</span> *<span class="built_in">array</span>,<span class="keyword">int</span> left,<span class="keyword">int</span> right)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(left&gt;right)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">int</span> index = quick_sort(<span class="built_in">array</span>,left,right);</span><br><span class="line">    quick_sort_recursion(<span class="built_in">array</span>,left,index<span class="number">-1</span>);</span><br><span class="line">    quick_sort_recursion(<span class="built_in">array</span>,index+<span class="number">1</span>,right);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//快速排序非递归实现</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quick_sort_Not_recursion</span><span class="params">(<span class="keyword">int</span> *<span class="built_in">array</span>,<span class="keyword">int</span> left,<span class="keyword">int</span> right)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(left&gt;=right)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; s;<span class="comment">//辅助栈，代替调用栈，防止调用栈溢出</span></span><br><span class="line">    s.push(left);</span><br><span class="line">    s.push(right);<span class="comment">//后入的right，所以要先拿right</span></span><br><span class="line">    <span class="keyword">while</span>(!s.empty())<span class="comment">//栈不为空</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> right = s.top();</span><br><span class="line">        s.pop();</span><br><span class="line">        <span class="keyword">int</span> left = s.top();</span><br><span class="line">        s.pop();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> index = quick_sort(<span class="built_in">array</span>,left,right);</span><br><span class="line">        <span class="keyword">if</span>((index - <span class="number">1</span>) &gt; left)<span class="comment">//左子序列</span></span><br><span class="line">        &#123;</span><br><span class="line">            s.push(left);</span><br><span class="line">            s.push(index - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>((index + <span class="number">1</span>) &lt; right)<span class="comment">//右子序列</span></span><br><span class="line">        &#123;</span><br><span class="line">            s.push(index + <span class="number">1</span>);</span><br><span class="line">            s.push(right);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="算法分析-1"><a href="#算法分析-1" class="headerlink" title="算法分析"></a>算法分析</h3><p>上述的代码分别展示了递归和非递归两种排序策略，每一轮排序过后，会返回一个两个子数组的分界点。之后再继续使用新的左右指针位置调用这个函数。先左后右的思路，但是这个是使用的系统的调用栈，如果深度过多容易造成调用栈溢出。所以我们使用非递归的方法，其实就是自己定义一个栈用来模拟调用栈的行为。</p>
+<p>非递归的思路如下：</p>
+<ol>
+<li>在循环开始前初始化左右两个指针位置分别压栈。</li>
+<li>判断栈是否为空，为空则表示排序结束。</li>
+<li>不为空时分别按照栈的顺序出栈，使用出栈的指针位置进行一轮排序。</li>
+<li>拿到新的基准数位置作为新的指针位置。</li>
+<li>如果左右指针位置不相等，分别按照左，右的位置将两个子数组的指针位置进栈，如果相等表示最小的子数组也排序完成，什么都不做。</li>
+<li>循环2-5。</li>
+</ol>
+<ul>
+<li>最佳情况：O(nlogn)</li>
+<li>最坏情况：O(n^2)</li>
+<li>平均时间复杂度：O(nlogn)</li>
+<li>空间复杂度：O(nlogn)</li>
+<li>不稳定排序算法</li>
+</ul>
+<h2 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h2><p>希尔排序是一个改进的插入排序，通过将数组进行分组的方式提高排序的效率，一般我们将数组长度的一半作为初始步长。然后在每一组中按照插入排序的方式进行排序。最后通过不断的缩小步长来进行区域的排序。这种排序方式比直接插入排序的效率高。</p>
+<h3 id="算法实现-3"><a href="#算法实现-3" class="headerlink" title="算法实现"></a>算法实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//希尔排序</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">shell_sort</span><span class="params">(<span class="keyword">int</span> *<span class="built_in">array</span>,<span class="keyword">int</span> length)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> distance = length/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span>(distance&gt;=<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//整个是一个插入排序</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=distance;i&lt;length;i++)<span class="comment">//按照增量分组</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> j=i-distance;<span class="comment">//前面的数的位置</span></span><br><span class="line">            <span class="keyword">int</span> temp=<span class="built_in">array</span>[i];<span class="comment">//将后面的数存一份</span></span><br><span class="line">            <span class="keyword">while</span>(j&gt;=<span class="number">0</span> &amp;&amp; temp&lt;<span class="built_in">array</span>[j])<span class="comment">//前面是数不越界且前面的大</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">//前面的大数给后面</span></span><br><span class="line">                <span class="built_in">array</span>[j+distance]=<span class="built_in">array</span>[j];</span><br><span class="line">                <span class="comment">//继续向前找当前组的前一个数</span></span><br><span class="line">                j=j-distance;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//排序后把后面的数放在正确的位置</span></span><br><span class="line">            <span class="built_in">array</span>[j+distance]=temp;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        distance=distance/<span class="number">2</span>;<span class="comment">//缩小增量，直到为1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="算法分析-2"><a href="#算法分析-2" class="headerlink" title="算法分析"></a>算法分析</h3><ul>
+<li>最佳情况：O(nlogn)</li>
+<li>最坏情况：O(nlogn)</li>
+<li>平均时间复杂度：O(nlogn)</li>
+<li>空间复杂度：O(1)</li>
+<li>不稳定排序算法</li>
+</ul>
+<h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><h3 id="什么是堆"><a href="#什么是堆" class="headerlink" title="什么是堆"></a>什么是堆</h3><p>堆是一个近似与完全二叉树的数据结构。</p>
+<blockquote>
+<p>完全二叉树: 除了最后一层之外的其他每一层都被完全填充，并且所有的节点都保持左对齐。</p>
+</blockquote>
+<img src="/2019/08/17/几大基础排序算法复习/heap.webp" title="完全二叉树">
+<p>堆排序就是利用完全二叉数的特性来进行排序的算法分。堆分为最大堆和最小堆。</p>
+<ul>
+<li>最大堆要求节点的元素都大于等于其孩子</li>
+<li>最小堆要求节点的元素都小于等于其孩子</li>
+</ul>
+<p>如何利用数组进行建堆呢？首先要了解数组和堆中节点的对应关系，在堆中是如何表示数组的位置的。根据完全二叉树的特点</p>
+<ul>
+<li>array[left] = array[father] * 2 + 1</li>
+<li>array[right] = array[father] * 2 +2</li>
+</ul>
+<p>如何建立最大堆和最小堆，这里以最大堆为例。从最后的非叶子节点开始，分别和左右孩子进行比较，并将最大的数放置在父节点位置，从后向前，对每一个非叶子节点都进行这种操作，这样每次上层的父节点进行交换的时候保证了他的子节点是比孙子大的。避免了频繁交换的麻烦。这样每次建最大堆都最多交换非叶子节点的个数那么多次。</p>
+<p>每建立一次最大堆，就将堆顶的元素取出，表示这里是最大的数，与数组的最后一个位置交换位置，将尾节点交换到根的位置，并将数组的最后一个数剔除出建堆的元素。表示这个数已经排序完成。</p>
+<h3 id="算法实现-4"><a href="#算法实现-4" class="headerlink" title="算法实现"></a>算法实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//堆排序构建堆函数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">adjust</span><span class="params">(<span class="keyword">int</span> *<span class="built_in">array</span>, <span class="keyword">int</span> length, <span class="keyword">int</span> index)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">2</span>*index + <span class="number">1</span>;<span class="comment">//左子树</span></span><br><span class="line">    <span class="keyword">int</span> right = <span class="number">2</span>*index + <span class="number">2</span>;<span class="comment">//右子树</span></span><br><span class="line">    <span class="keyword">int</span> maxIndex = index;<span class="comment">//定义最大值默认非叶节点</span></span><br><span class="line">    <span class="keyword">if</span>(left&lt;length &amp;&amp; <span class="built_in">array</span>[left] &gt; <span class="built_in">array</span>[maxIndex]) maxIndex = left;</span><br><span class="line">    <span class="comment">//如果左边大，最大的是左边</span></span><br><span class="line">    <span class="keyword">if</span>(right&lt;length &amp;&amp; <span class="built_in">array</span>[right] &gt; <span class="built_in">array</span>[maxIndex]) maxIndex = right;  </span><br><span class="line">    <span class="comment">// maxIndex是3个数中最大数的下标</span></span><br><span class="line">    <span class="keyword">if</span>(maxIndex != index)                 <span class="comment">// 如果maxIndex的值有更新</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> temp = <span class="built_in">array</span>[maxIndex];</span><br><span class="line">        <span class="built_in">array</span>[index]=<span class="built_in">array</span>[maxIndex];duiz</span><br><span class="line">        <span class="built_in">array</span>[maxIndex]=temp;</span><br><span class="line">        adjust(<span class="built_in">array</span>, length, maxIndex);       <span class="comment">// 递归调整其他不满足堆性质的部分</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">heap_sort</span><span class="params">(<span class="keyword">int</span> *<span class="built_in">array</span>, <span class="keyword">int</span> length)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=length/<span class="number">2</span> - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)  <span class="comment">// 对每一个非叶结点进行堆调整(从最后一个非叶结点开始)</span></span><br><span class="line">    &#123;</span><br><span class="line">        adjust(<span class="built_in">array</span>, length, i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = length - <span class="number">1</span>; i &gt;= <span class="number">1</span>; i--)</span><br><span class="line">    &#123;</span><br><span class="line">        swap(<span class="built_in">array</span>[<span class="number">0</span>], <span class="built_in">array</span>[i]);</span><br><span class="line">        <span class="keyword">int</span> temp = <span class="built_in">array</span>[<span class="number">0</span>];</span><br><span class="line">        <span class="built_in">array</span>[<span class="number">0</span>]=<span class="built_in">array</span>[i];</span><br><span class="line">        <span class="built_in">array</span>[i]=temp;           <span class="comment">// 将当前最大的放置到数组末尾</span></span><br><span class="line">        adjust(<span class="built_in">array</span>, i, <span class="number">0</span>);              <span class="comment">// 将未完成排序的部分继续进行堆排序</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="算法分析-3"><a href="#算法分析-3" class="headerlink" title="算法分析"></a>算法分析</h3><ul>
+<li>最佳情况：O(nlogn)</li>
+<li>最坏情况：O(nlogn)</li>
+<li>平均时间复杂度：O(nlogn)</li>
+<li>空间复杂度：O(1)</li>
+<li>不稳定排序算法</li>
+</ul>
+<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><p>选择排序的思路非常的简单，符合常人的排序思路，每次从待排序的数组中抽出最小的数放入坑位，如果位置本身就是最小的数，什么都不做。直到待排序数组为空。</p>
+<h3 id="算法实现-5"><a href="#算法实现-5" class="headerlink" title="算法实现"></a>算法实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//选择排序，最简单的思路</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">select_sort</span><span class="params">(<span class="keyword">int</span> *<span class="built_in">array</span>,<span class="keyword">int</span> length)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//每次从待排序的数组中找到最小的，放在下标的位置，稳定算法（无论是什么样的数组，排序次数不变）</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;length;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> min_index=i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;length;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">array</span>[min_index]&gt;<span class="built_in">array</span>[j])</span><br><span class="line">            &#123;</span><br><span class="line">                min_index=j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(min_index!=i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> temp=<span class="built_in">array</span>[i];</span><br><span class="line">            <span class="built_in">array</span>[i]=<span class="built_in">array</span>[min_index];</span><br><span class="line">            <span class="built_in">array</span>[min_index]=temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>最佳情况：O(n^2)</li>
+<li>最差情况：O(n^2)</li>
+<li>平均时间复杂度：O(n^2)</li>
+<li>空间复杂度：O(1)</li>
+<li>不稳定排序算法</li>
+</ul>
+<h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><p>归并排序采用分治的思想，首先对数组进行划分，直到不能再进行细分，然后将临近的数组进行组合同时排序，使用一个辅助数组，两个子数组的头谁小谁进，直到两个子数组为空，表示合并完成，采用递归的方法，将所有的子数组和并完成的时候数组也就排序完成了。</p>
+<h3 id="算法实现-6"><a href="#算法实现-6" class="headerlink" title="算法实现"></a>算法实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//归并排序，在两个下标之间合成一个有序序列</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> *<span class="built_in">array</span>,<span class="keyword">int</span> first,<span class="keyword">int</span> mid,<span class="keyword">int</span> last)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i=first;<span class="comment">//第一个子数组首元素</span></span><br><span class="line">    <span class="keyword">int</span> j=mid+<span class="number">1</span>;<span class="comment">//第二个子数组首元素</span></span><br><span class="line">    <span class="keyword">int</span> m=mid;<span class="comment">//第一个子数组尾元素</span></span><br><span class="line">    <span class="keyword">int</span> n=last;<span class="comment">//第二个子数组尾元素</span></span><br><span class="line">    <span class="keyword">int</span> temp[n];<span class="comment">//辅助数组</span></span><br><span class="line">    <span class="keyword">int</span> k=<span class="number">0</span>;<span class="comment">//辅助数组下标</span></span><br><span class="line">    <span class="comment">//两个子数组头部，谁小谁进辅助数组,合成一个有序数组</span></span><br><span class="line">    <span class="keyword">while</span>(i&lt;=m&amp;&amp;j&lt;=n)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">array</span>[i]&lt;<span class="built_in">array</span>[j])</span><br><span class="line">            temp[k++] = <span class="built_in">array</span>[i++];</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            temp[k++] = <span class="built_in">array</span>[j++];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//两个数组有剩余时，直接进辅助数组</span></span><br><span class="line">    <span class="keyword">while</span>(i&lt;=m)</span><br><span class="line">        temp[k++]=<span class="built_in">array</span>[i++];</span><br><span class="line">    <span class="keyword">while</span>(j&lt;=n)</span><br><span class="line">        temp[k++]=<span class="built_in">array</span>[j++];</span><br><span class="line"></span><br><span class="line">    <span class="comment">//将辅助数组送回数组</span></span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;k;i++)</span><br><span class="line">        <span class="built_in">array</span>[first+i]=temp[i];</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 递归的进行两两分割</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge_sort</span><span class="params">(<span class="keyword">int</span> *<span class="built_in">array</span>,<span class="keyword">int</span> start,<span class="keyword">int</span> end)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(start &lt;end)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> mid=(start+end)/<span class="number">2</span>;</span><br><span class="line">        merge_sort(<span class="built_in">array</span>,start,mid);<span class="comment">//分割左子数组</span></span><br><span class="line">        merge_sort(<span class="built_in">array</span>,mid+<span class="number">1</span>,end);<span class="comment">//分割右子数组</span></span><br><span class="line">        merge(<span class="built_in">array</span>,start,mid,end);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="算法分析-4"><a href="#算法分析-4" class="headerlink" title="算法分析"></a>算法分析</h3><ul>
+<li>最佳情况：O(nlogn)</li>
+<li>最坏情况：O(nlogn)</li>
+<li>平均时间复杂度：O(nlogn)</li>
+<li>空间复杂度：O(n)</li>
+<li>稳定排序算法</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/算法/" rel="tag"># 算法</a>
+          
+            <a href="/tags/C/" rel="tag"># C++</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/05/UML类图/" rel="next" title="UML类图">
+                <i class="fa fa-chevron-left"></i> UML类图
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/24/设计模式几大原则/" rel="prev" title="设计模式几大原则">
+                设计模式几大原则 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpeg" alt="Jaxon Su">
+            
+              <p class="site-author-name" itemprop="name">Jaxon Su</p>
+              <p class="site-description motion-element" itemprop="description">爱折腾</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/JunHaoSu" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:sujunhao0504@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/sujunhao0504" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com/users/9831877/bran-su" target="_blank" title="StackOverflow">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://leetcode-cn.com/bran-su/" target="_blank" title="LeetCode">
+                      
+                        <i class="fa fa-fw fa-LeetCode"></i>LeetCode</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#冒泡排序"><span class="nav-number">1.</span> <span class="nav-text">冒泡排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法实现"><span class="nav-number">1.1.</span> <span class="nav-text">算法实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路整理"><span class="nav-number">1.2.</span> <span class="nav-text">思路整理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入排序"><span class="nav-number">2.</span> <span class="nav-text">插入排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法实现-1"><span class="nav-number">2.1.</span> <span class="nav-text">算法实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法分析"><span class="nav-number">2.2.</span> <span class="nav-text">算法分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速排序"><span class="nav-number">3.</span> <span class="nav-text">快速排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法实现-2"><span class="nav-number">3.1.</span> <span class="nav-text">算法实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法分析-1"><span class="nav-number">3.2.</span> <span class="nav-text">算法分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#希尔排序"><span class="nav-number">4.</span> <span class="nav-text">希尔排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法实现-3"><span class="nav-number">4.1.</span> <span class="nav-text">算法实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法分析-2"><span class="nav-number">4.2.</span> <span class="nav-text">算法分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆排序"><span class="nav-number">5.</span> <span class="nav-text">堆排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是堆"><span class="nav-number">5.1.</span> <span class="nav-text">什么是堆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法实现-4"><span class="nav-number">5.2.</span> <span class="nav-text">算法实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法分析-3"><span class="nav-number">5.3.</span> <span class="nav-text">算法分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择排序"><span class="nav-number">6.</span> <span class="nav-text">选择排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法实现-5"><span class="nav-number">6.1.</span> <span class="nav-text">算法实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#归并排序"><span class="nav-number">7.</span> <span class="nav-text">归并排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法实现-6"><span class="nav-number">7.1.</span> <span class="nav-text">算法实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法分析-4"><span class="nav-number">7.2.</span> <span class="nav-text">算法分析</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jaxon Su</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>

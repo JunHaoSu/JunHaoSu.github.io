@@ -1,9 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[设计模式几大原则]]></title>
+    <url>%2F2019%2F08%2F24%2F%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%87%A0%E5%A4%A7%E5%8E%9F%E5%88%99%2F</url>
+    <content type="text"><![CDATA[六大原则 单一职责原则 里氏替换原则 依赖倒转原则 开放-封闭原则 接口隔离原则 迪米特法则 设计模式的目标 易维护，易扩展，易复用，灵活多样。 单一职责原则 单一职责原则，就一个类而言，应该仅有一个引起它变化的原因。 如果一个类承担的职责过多，就等于把这些职责耦合在一起，一个职责的变化可能会削弱或者抑制这个类完成其他职责的能力。这种耦合会导致脆弱的设计，当变化发生时，设计会遭到意想不到的破坏。 软件设计真正要做的很多内容，就是发现职责并把那些职责相互分离，如何判断是否应该分离出类来，如果你能够想到多于一个的动机去改变一个类，那么这个类就具有了多于一个的职责。此时就应该考虑职责的分离。 依赖倒转原则 依赖倒转原则A. 高层模块不应该依赖低层模块。两个都应该依赖抽象。B. 抽象不应该依赖细节。细节应该依赖抽象。 说白了，依赖倒转原则就是要针对接口编程，不要针对实现编程。最好每个类都要有接口，或者抽象类。面对接口编程能够减少类之间的耦合度。高层模块不应该依赖低层模块，两个都应该依赖抽象。 里氏替换原则 里氏替换原则：子类型必须能够替换掉他们的父类型。 在一个软件实体中如果使用的是父类的话，那么一定适用于其子类，而且察觉不到父类对象和子类对象的区别。也就是说，在软件里面，把父类都替换成它的子类，程序的行为没有变化。 只有当子类可以替换掉父类时，软件单位的功能不受到影响时，父类才能真正的被复用，而子类也能够在父类的基础上增加新的行为，子类最好不要重写父类的方法，而是增加父类的行为。正式由于子类型的可替换星才使得父类类型的模块在无需修改的情况下就可以扩展。 开放-封闭原则 开放-封闭原则，软件实体（类，模块，函数等等）应该可以扩展，但是不可修改。 对于扩展是开放的，对于修改是封闭的。对于需求一直变化的系统，我们都不要去修改原有的逻辑，而是增加新的逻辑。对于新需求一来就要把整个程序推到重来时不可取也是不现实的，所以开闭原则告诉我们，在程序设计的时候要时刻考虑，尽量让这个类足够好，写好了就不要去修改，如果有新的需求，增加一些类就完事了，原来的代码能不动就不动。 开放封闭原则时面向对象设计的核心所在，遵循这个原则可以带来面向对象技术所称的巨大好处 可维护，可复用，可扩展，灵活性好 开发人员应该仅对程序中呈现出频繁变化的哪些部分做出抽象，然而，对于应用程序中的每个部分都刻意地进行抽象同样不是一个好主意。拒绝不成熟的抽象和抽象本身一样重要。 接口隔离原则 接口隔离原则A.客户端不应该依赖它不需要的接口B.类间的依赖关系应该建立在最小的接口上 不要在一个接口里面放很多的方法，这样会显得这个类很臃肿不堪。接口应该尽量细化，一个接口对应一个功能模块，同时接口里面的方法应该尽可能的少，使接口更加轻便灵活。或许看到接口隔离原则这样的定义很多人会觉得和单一职责原则很像，但是这两个原则还是有着很鲜明的区别。接口隔离原则和单一职责原则的审视角度是不同的，单一职责原则要求类和接口职责单一，注重的是职责，是业务逻辑上的划分，而接口隔离原则要求方法要尽可能的少，是在接口设计上的考虑。 迪米特法则 迪米特法则，如果两个类不必彼此直接通信，那么这个两个类就不应当发生直接的相互作用。如果其中一个类需要调用另一个类的某一个方法的话，可以通过第三者转发这个调用。 首先在累的结构设计上，每一个类都应当尽量降低成员的访问权限。 类之间的耦合越弱，越有利于复用，一个处在弱耦合的类被修改，不会对有关系的类造成波及。]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[几大基础排序算法复习]]></title>
+    <url>%2F2019%2F08%2F17%2F%E5%87%A0%E5%A4%A7%E5%9F%BA%E7%A1%80%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E5%A4%8D%E4%B9%A0%2F</url>
+    <content type="text"><![CDATA[大学也毕业了，呆了一段时间公司，干的活多是琐碎的工作，提高了项目能力，但是对于编程基础的东西绝对不能丢，就像项目组最近在排查性能问题一样，如果程序员的基础扎实了，很难会出现性能的问题，节省时间和空间几乎成了本能的行为，又怎么会出现项目迭代过程中专门花时间进行性能瓶颈的排查呢？项目几经易手，原来的代码难改，逻辑混乱，对于业务不太熟悉的人来说，代码根本无从下手。所以就像破窗户一样只会越来越大。 不要容忍破窗户 出自《程序员修炼之——从小工到专家》 所以我准备系统的复习大学期间的算法知识。先从常用的排序和查找开始。 冒泡排序冒泡排序是大学中学习C++后接触到的的第一个算法，算法思想是每次比较相邻的两个数，大的向后排，不停的后移，每经过一轮，就会有一个大数冒到最后去，俗称冒泡法。这是个稳定的排序算法，无论数据如何排列，程序经过的步骤是一样的。不会因为数据的排列不同而少做处理。 算法实现123456789101112131415161718192021222324//冒泡排序void bubble_sort(int *array,int length)&#123; if(array == NULL)&#123; return; &#125; int flag=1; //flag的作用是记录上一轮是否发生了交换， //如果没有，那就说明已经排好了序，直接退出 for (int i = 0; i &lt; length - 1&amp;&amp;flag; i++) &#123; flag=0; for (int j = 0; j &lt; length - i - 1; j++) &#123; if (array[j] &gt; array[j+1]) &#123; int temp = array[j]; array[j] = array[j+1]; array[j+1] = temp; flag=1; &#125; &#125; &#125;&#125; 思路整理原始的冒泡排序是这样的，两层循环，外层执行一次表示一轮，每执行一次都代表了一个大数已经冒出去了，内层循环表示相邻两个数之间的比较，并且比较的指针位置随着循环的执行在不停地向后移动。循环中if判断表示两个数之间交换位置。上述方法和课本学习的原始冒泡排序不太一样，他加入了一个标志位flag，这个标志位记录了本轮有没有进行过数字位置的变动，如果进行到某一轮，每一个数的位置都没有发生变化，那么就代表所有的数字都已经到了他该放置的位置。所以排序就结束了，直接退出循环。 最佳情况：O(n) 最差情况：O(n^2) 平均时间复杂度：O(n^2) 空间复杂度为O(1) 稳定排序算法 插入排序插入排序使用了和冒泡不一样的思想，他的思路不是冒泡那种根据频繁变动位置来处理，而是在一轮中拿出一个基准值来进行判断。他的思路是这样的，默认第一轮最左边的数是最小的，所以第一轮不进行，直接拿左数第二个数作为第一个基准值。并对已经排序的数组中从右向左比较，如果比这个数大，向后挪一个位置，相当于占用了刚刚基准值的位置，直到找到一个位置上的数比基准值小，那么基准值就插入到这个数的后面，如果比这个基准值小，那么前面的所有数都比这个基准值小，本轮结束。直到所有的数都作为基准值进行过一侧比较，整个算法结束。 算法实现123456789101112131415161718//插入排序void insert_sort(int *array,int length)&#123; if(array == NULL)&#123; return; &#125; for(int i=1;i&lt;length;i++) &#123; int j=i-1; int temp=array[i]; while(array[j]&gt;temp&amp;&amp;j&gt;=0) &#123; array[j+1]=array[j]; j--; &#125; array[j+1]=temp; &#125;&#125; 算法分析 最佳情况：O(n) 最坏情况：O(n^2) 平均时间复杂度：O(n^2) 空间复杂度：O(1) 稳定排序算法 快速排序快速排序是一个对冒泡排序的一大改进，冒泡排序采用的是挨个比较的办法，快速排序的思想则是分治法，取出一个数，将所有比这个数小的放在左边，比这个数大的放在右边。这样会产生两个子数组，然后在这两个子数组中分别再采用相同的策略，直到不能再分，这样处理的步骤会比冒泡排序少很多。采用的是分治递归的思想。 那么如何处理基准值比较这个逻辑呢？常用的是挖坑法。取出头部第一个数，设置头尾两个指针，先从尾部开始向前移动尾指针，出现第一个比基准数小的数就放置在基准数留下的坑中，此时该数的原始位置就成了一个新的坑位。然后再从头部向后移动头部指针，将第一个大于基准数的数向后挪，放置在刚刚新的坑位上。这样交替移动头尾指针，直到最后头尾指针相遇，此时最后一个坑位就是相遇的地方，将基准数填到这个位置，一轮排序就结束了。 然后使用相同的策略对基准数左右的两个子数组进行排序，同样是调用一轮排序的算法。只不过把左子数组的尾指针换成第一轮的基准数左边的位置，把右子数组的头指针换成了基准数右边的位置而已。直到递归的把所有的数全部排完。 算法实现12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364//快速排序int quick_sort(int *array,int _left,int _right)&#123; //挖坑法 if(_left&lt;_right)&#123; int left=_left;//左指针 int right=_right;//右指针 int key=array[_left];//将数组第一个数作为基准值 while(left&lt;right)&#123; while(right&gt;left&amp;&amp;key&lt;=array[right])&#123; //从右向左找到第一个小于基准值的值 right--; &#125; array[left]=array[right]; //将右指针的值赋给左指针，第一次会覆盖基准值 while(right&gt;left&amp;&amp;key&gt;=array[left])&#123; //从左向右找到第一个大于基准值的值 left++; &#125; array[right]=array[left]; //将左指针的值赋给右指针，会覆盖掉刚刚右指针多出来的旧位置 &#125; array[left]=key;//最后左右指针归于中间一处，此处放回基准值 return left; &#125;&#125;//快速排序递归实现void quick_sort_recursion(int *array,int left,int right)&#123; if(left&gt;right) return; int index = quick_sort(array,left,right); quick_sort_recursion(array,left,index-1); quick_sort_recursion(array,index+1,right);&#125;//快速排序非递归实现void quick_sort_Not_recursion(int *array,int left,int right)&#123; if(left&gt;=right) return; stack&lt;int&gt; s;//辅助栈，代替调用栈，防止调用栈溢出 s.push(left); s.push(right);//后入的right，所以要先拿right while(!s.empty())//栈不为空 &#123; int right = s.top(); s.pop(); int left = s.top(); s.pop(); int index = quick_sort(array,left,right); if((index - 1) &gt; left)//左子序列 &#123; s.push(left); s.push(index - 1); &#125; if((index + 1) &lt; right)//右子序列 &#123; s.push(index + 1); s.push(right); &#125; &#125;&#125; 算法分析上述的代码分别展示了递归和非递归两种排序策略，每一轮排序过后，会返回一个两个子数组的分界点。之后再继续使用新的左右指针位置调用这个函数。先左后右的思路，但是这个是使用的系统的调用栈，如果深度过多容易造成调用栈溢出。所以我们使用非递归的方法，其实就是自己定义一个栈用来模拟调用栈的行为。 非递归的思路如下： 在循环开始前初始化左右两个指针位置分别压栈。 判断栈是否为空，为空则表示排序结束。 不为空时分别按照栈的顺序出栈，使用出栈的指针位置进行一轮排序。 拿到新的基准数位置作为新的指针位置。 如果左右指针位置不相等，分别按照左，右的位置将两个子数组的指针位置进栈，如果相等表示最小的子数组也排序完成，什么都不做。 循环2-5。 最佳情况：O(nlogn) 最坏情况：O(n^2) 平均时间复杂度：O(nlogn) 空间复杂度：O(nlogn) 不稳定排序算法 希尔排序希尔排序是一个改进的插入排序，通过将数组进行分组的方式提高排序的效率，一般我们将数组长度的一半作为初始步长。然后在每一组中按照插入排序的方式进行排序。最后通过不断的缩小步长来进行区域的排序。这种排序方式比直接插入排序的效率高。 算法实现12345678910111213141516171819202122232425//希尔排序void shell_sort(int *array,int length)&#123; int distance = length/2; while(distance&gt;=1) &#123; //整个是一个插入排序 for(int i=distance;i&lt;length;i++)//按照增量分组 &#123; int j=i-distance;//前面的数的位置 int temp=array[i];//将后面的数存一份 while(j&gt;=0 &amp;&amp; temp&lt;array[j])//前面是数不越界且前面的大 &#123; //前面的大数给后面 array[j+distance]=array[j]; //继续向前找当前组的前一个数 j=j-distance; &#125; //排序后把后面的数放在正确的位置 array[j+distance]=temp; &#125; distance=distance/2;//缩小增量，直到为1 &#125;&#125; 算法分析 最佳情况：O(nlogn) 最坏情况：O(nlogn) 平均时间复杂度：O(nlogn) 空间复杂度：O(1) 不稳定排序算法 堆排序什么是堆堆是一个近似与完全二叉树的数据结构。 完全二叉树: 除了最后一层之外的其他每一层都被完全填充，并且所有的节点都保持左对齐。 堆排序就是利用完全二叉数的特性来进行排序的算法分。堆分为最大堆和最小堆。 最大堆要求节点的元素都大于等于其孩子 最小堆要求节点的元素都小于等于其孩子 如何利用数组进行建堆呢？首先要了解数组和堆中节点的对应关系，在堆中是如何表示数组的位置的。根据完全二叉树的特点 array[left] = array[father] * 2 + 1 array[right] = array[father] * 2 +2 如何建立最大堆和最小堆，这里以最大堆为例。从最后的非叶子节点开始，分别和左右孩子进行比较，并将最大的数放置在父节点位置，从后向前，对每一个非叶子节点都进行这种操作，这样每次上层的父节点进行交换的时候保证了他的子节点是比孙子大的。避免了频繁交换的麻烦。这样每次建最大堆都最多交换非叶子节点的个数那么多次。 每建立一次最大堆，就将堆顶的元素取出，表示这里是最大的数，与数组的最后一个位置交换位置，将尾节点交换到根的位置，并将数组的最后一个数剔除出建堆的元素。表示这个数已经排序完成。 算法实现12345678910111213141516171819202122232425262728293031323334//堆排序构建堆函数void adjust(int *array, int length, int index)&#123; int left = 2*index + 1;//左子树 int right = 2*index + 2;//右子树 int maxIndex = index;//定义最大值默认非叶节点 if(left&lt;length &amp;&amp; array[left] &gt; array[maxIndex]) maxIndex = left; //如果左边大，最大的是左边 if(right&lt;length &amp;&amp; array[right] &gt; array[maxIndex]) maxIndex = right; // maxIndex是3个数中最大数的下标 if(maxIndex != index) // 如果maxIndex的值有更新 &#123; int temp = array[maxIndex]; array[index]=array[maxIndex];duiz array[maxIndex]=temp; adjust(array, length, maxIndex); // 递归调整其他不满足堆性质的部分 &#125;&#125;void heap_sort(int *array, int length)&#123; for(int i=length/2 - 1; i &gt;= 0; i--) // 对每一个非叶结点进行堆调整(从最后一个非叶结点开始) &#123; adjust(array, length, i); &#125; for(int i = length - 1; i &gt;= 1; i--) &#123; swap(array[0], array[i]); int temp = array[0]; array[0]=array[i]; array[i]=temp; // 将当前最大的放置到数组末尾 adjust(array, i, 0); // 将未完成排序的部分继续进行堆排序 &#125;&#125; 算法分析 最佳情况：O(nlogn) 最坏情况：O(nlogn) 平均时间复杂度：O(nlogn) 空间复杂度：O(1) 不稳定排序算法 选择排序选择排序的思路非常的简单，符合常人的排序思路，每次从待排序的数组中抽出最小的数放入坑位，如果位置本身就是最小的数，什么都不做。直到待排序数组为空。 算法实现12345678910111213141516171819202122//选择排序，最简单的思路void select_sort(int *array,int length)&#123; //每次从待排序的数组中找到最小的，放在下标的位置，稳定算法（无论是什么样的数组，排序次数不变） for(int i=0;i&lt;length;i++) &#123; int min_index=i; for(int j=i+1;j&lt;length;j++) &#123; if(array[min_index]&gt;array[j]) &#123; min_index=j; &#125; &#125; if(min_index!=i) &#123; int temp=array[i]; array[i]=array[min_index]; array[min_index]=temp; &#125; &#125;&#125; 最佳情况：O(n^2) 最差情况：O(n^2) 平均时间复杂度：O(n^2) 空间复杂度：O(1) 不稳定排序算法 归并排序归并排序采用分治的思想，首先对数组进行划分，直到不能再进行细分，然后将临近的数组进行组合同时排序，使用一个辅助数组，两个子数组的头谁小谁进，直到两个子数组为空，表示合并完成，采用递归的方法，将所有的子数组和并完成的时候数组也就排序完成了。 算法实现123456789101112131415161718192021222324252627282930313233343536373839//归并排序，在两个下标之间合成一个有序序列void merge(int *array,int first,int mid,int last)&#123; int i=first;//第一个子数组首元素 int j=mid+1;//第二个子数组首元素 int m=mid;//第一个子数组尾元素 int n=last;//第二个子数组尾元素 int temp[n];//辅助数组 int k=0;//辅助数组下标 //两个子数组头部，谁小谁进辅助数组,合成一个有序数组 while(i&lt;=m&amp;&amp;j&lt;=n) &#123; if(array[i]&lt;array[j]) temp[k++] = array[i++]; else temp[k++] = array[j++]; &#125; //两个数组有剩余时，直接进辅助数组 while(i&lt;=m) temp[k++]=array[i++]; while(j&lt;=n) temp[k++]=array[j++]; //将辅助数组送回数组 for(i=0;i&lt;k;i++) array[first+i]=temp[i];&#125;// 递归的进行两两分割void merge_sort(int *array,int start,int end)&#123; if(start &lt;end) &#123; int mid=(start+end)/2; merge_sort(array,start,mid);//分割左子数组 merge_sort(array,mid+1,end);//分割右子数组 merge(array,start,mid,end); &#125;&#125; 算法分析 最佳情况：O(nlogn) 最坏情况：O(nlogn) 平均时间复杂度：O(nlogn) 空间复杂度：O(n) 稳定排序算法]]></content>
+      <categories>
+        <category>算法复习</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[UML类图]]></title>
+    <url>%2F2019%2F08%2F05%2FUML%E7%B1%BB%E5%9B%BE%2F</url>
+    <content type="text"><![CDATA[类的表示在面向对象的设计方法中，类一般分为三个部分。类名，类属性，和类方法。在面向对象的设计语言中，一个完整的类是需要包含这些方法的。使用类图表示就是下图：Person代表类名，在第一栏，如果是抽象类就用斜体显示。第二栏代表了类的属性，第三栏代表了方法。’+’代表public，’-‘代表private，’#’表示protected。 上图中接口与类图的区别就是顶端有&lt;&lt;interface&gt;&gt;显示。第一栏是接口名称，第二栏列出了接口方法。 类之间的关系类图是面向对象系统建模中最常用和最重要的图，通过画类图可以很清晰的展示系统的设计。类和类之间有六种关系，分别是泛化(Generalization)，实现(Realization)，依赖(Dependency)和关联(Association)，聚合(Aggregation)和组合(Composition)。 虚线箭头指依赖 实线箭头指关联 虚线三角指接口 实线三角指父类 空心菱形是聚合 实心菱形是组合 依赖(Dependency)依赖 是几种关系中耦合度最小的，如下图：氧气类和动物类本身并没有什么关系，只是动物类的某些方法会使用到氧气类，它本身并不是动物类的某个属性，只是某些方法需要使用到而已。具体的代码表现形式就是动物的某个方法需要用到氧气，作为局部变量或者参数。12345class Animal &#123; public void breath(Oxygen o2)&#123; &#125;&#125; 或者12345class Animal&#123; public void breath()&#123; Oxygen o2 = new Oxygen(); &#125;&#125; 上述的氧气类对象只是动物类的某个方法持有而不是动物类，只有执行呼吸方法的时候氧气对象才会别初始化，生命周期随方法的结束而结束。 关联(Association) 关联比依赖的耦合度高，一般是一个类是另一个类的一个属性。比如企鹅和气候，企鹅需要知道气候的变换和规律，是和类相关的。气候类伴随着企鹅的生命周期的全过程。具体的代码表现形式就是：123class Penguin&#123; private Climate climate;&#125; 在企鹅类中，用到了气候对象。 泛化(Generalization)泛化说白了就是某个东西的具体实现，那么在面向对象中就是继承的关系。某个类是父类的具体实现，他们就是泛化关系：泛化就是继承关系，使用实线三角来表示。具体到代码表现就是：123public class Bird extends Animal&#123;&#125; 实现(Realization)实现表示的是接口。某个类实现了某个接口，使用虚线三角来表示。具体到代码实现是：123public class WIdeGoose implements Fly&#123;&#125; 组装(Composition)这里为什么要使用组装呢？很多人把组合和聚合分不清楚。组合就是使用不同的零件来组成一件东西。而聚合则是将多个一样的东西合在一起。使用组装则更容易来区分这个概念。组装使用实线菱形来表示。如上图，一只鸟有两只翅膀，是1对2的关系。翅膀是鸟的组成部分之一。具体到代码实现是：123456class Bird&#123; private Wing wing; public Bird()&#123; wing = new Wing(); &#125;&#125; 在鸟这个对象初始化之时翅膀就要作为鸟初始化的一部分。 聚合(Aggregation)聚合是一种很好理解的关系，我们写代码会经常用到，数组，列表等集合就是聚合关系的表现形式。上图大雁组成雁群，少一只大雁雁群依然是存在的。代码表现形式如下：123class WideGooseAggregate&#123; private WideGoose[] arrayWideGoose;&#125; 在雁群类中，有大雁的集合对象。]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java如何创建一个对象]]></title>
+    <url>%2F2019%2F07%2F27%2FJava%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%2F</url>
+    <content type="text"><![CDATA[我们知道Java是面向对象的编码思维，但是你知道一个new语句到底做了什么吗?一个对象到底是如何进行创建，布局和访问的。 对象的创建 第一步，首先虚拟机在在遇到一条new语句的时候，首先会检查这个指令的参数是否能在常量池中定位到一个类的符号引用。并且将检查这个符号引用代表的类是否已经被加载，解析和初始化过。如果没有，则必须对这个类进行类加载。 第二步，类加载完成后，JVM会在java堆上为对象分配内存，内存大小在类加载的时候就已经确定了（这个是如何确定的呢？类加载完成以后，类的继承体系关系就确定了，因为在加载该类之前是要先加载父类的，所以对象的大小=对象头大小+父级继承链非静态成员域大小+当前加载类非静态成员域大小+内存对齐导致的padding。）。从堆中分配内存有两种方式，指针碰撞和空闲列表。 第三步，初始化，将分配的内存区域初始化为零，不同类型有不同的初始化值。保证对象的字段不初始化也可使用。 第四部，执行构造方法，这一步就是执行用户自定义的初始化方法，对数据进行初始化，至此对象创建完成。 指针碰撞和空闲列表指针碰撞如果内存规整，没有碎片，指针碰撞是一个很好的方法。将已使用的内存和未使用的内存分别分布在一个指针的两侧，这个指针就是一个分界点，当需要分配内存的时候，就将指针向空闲的一端移动与内存大小相同的距离。使用的GC搜集器：Serial, ParNew 空闲列表如果内存是不规整的，有大量的碎片存在，JVM就维护一个列表，记录可用的内存块信息，当分配内存的操作发生的时候，就在这个列表中找到一个足够大的内存块分配给对象，并更新表格。使用的GC搜集器：CMS 如何进行选择内存分配方式选择那种分配方式是由Java堆是否规整决定的，而Java堆是否规整又是由所采用的垃圾搜集器是否带有压缩整理算法决定的。同时，还需要考虑对象创建在虚拟机中是非常频繁的行为，需要考虑线程安全的问题，指针碰撞会产生线程之间的冲突，一般解决办法是首先，保证了分配内存操作的原子性，然后预先为每个线程分配一小块内存，保证了他们之间互相不冲突。这块内存叫做本地线程分配缓冲(Thread Local Allocation Buffer, TLAB)。只有该线程用完了TLAB时，才需要同步锁定。虚拟机是否使用TLAB，由选项–XX:+/UseTLAB参数决定。 对象的内存分布对象在内存中分为3个部分，分别是对象头，实例数据，以及对齐填充。 对象头对象头主要分为Mark Word和类型指针。MardWord存储了哈希吗GC分代年龄，锁状态标志，线程持有的锁，偏向线程ID等。这部分数据长度在32、64位虚拟机内分别是32bit和64bit。类型指针指向类元数据的指针，用来确定对象是那一个类的实例。对象头是一个非固定的数据结构。如果对象是一个数组，对象头还要有一块用于记录数组长度的数据。 实例数据实例数据就是对象中定义的数据已经从父类继承的数据。 对齐填充HotSpot虚拟机的自动内存管理系统要求对象起始地址必须是8字节的整数倍，所以必须要使用对齐填充来进行占位。保证对象的大小是8字节的整数倍。 对象的访问定位对象在创建完之后，放在java堆中，但是是如何找到这个对象的呢？分为直接地址和句柄 句柄在java堆中，会划分一个区域叫做句柄池，引用类型reference中存储的就是对象的句柄地址，句柄包含了对象的具体地址信息。移动对象不需要修改数据。 直接地址reference中直接存储对象的地址。速度快。]]></content>
+      <categories>
+        <category>Java虚拟机</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>Java虚拟机</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Try-with-Resources]]></title>
     <url>%2F2019%2F07%2F24%2FTry-with-Resources%2F</url>
-    <content type="text"><![CDATA[Java语法糖是一种在不影响功能的情况下为程序员提供的便捷的语法使用方式。 Tye-with-Resources就是这样一个用来便捷的在try语句块中申请和释放资源的语法使用方式。通过这个语法糖,可以有效的避免在finally中忘记释放资源的情况。类似的思想在Python的with语法中也有体现。推荐一个IDEA插件，sonarlint。通过sonarlint的智能提示，我们可以改正很多的不好的编码习惯。 资源什么是资源，对于非内存的操作，比如磁盘，数据库，比如网络等其他设备。都有一个临界资源的概念。什么是临界资源？在操作系统知识体系中，把一次只能由一个进程使用的资源称为临界资源，所以所有的进程使用这些资源的时候都是互斥的。那么我们在编程的时候，一定要注意临界资源的申请和释放。 try-catch-finally方式传统的资源申请方式是在try中申请，在catch中处理异常，在finally中释放资源。但是程序毕竟是人写的，总会有遗忘的时候。当程序员遗忘后，Java编译器是不会报错的，但是会出bug。try-catch-finally方式如下：1234567891011121314public static void method()&#123; InputStream inputStream=null; try &#123; inputStream= new FileInputStream(&quot;test&quot;); &#125; catch (Exception e) &#123; &#125; finally &#123; try &#123; inputStream.close(); &#125; catch (IOException e) &#123; e.printStackTrace(); &#125; &#125;&#125; 在上述的代码中，关闭资源的方式非常繁琐。容易遗忘。 try-with-Resources 方法try-with-Resources 是JDK1.7之后的语法糖。旨在简化这种繁琐的关闭资源的方式。代码如下：123456789//捕获异常public static void try2() &#123; try (BufferedInputStream bin = new BufferedInputStream(new FileInputStream(new File(&quot;test.txt&quot;))); BufferedOutputStream bout = new BufferedOutputStream(new FileOutputStream(new File(&quot;out.txt&quot;)));) &#123; // 执行完try中的语句过后,资源自动关闭 &#125; catch (IOException e) &#123; e.printStackTrace(); &#125;&#125; 在上述的代码中，没有了finally操作，简化了程序员的操作。是一种优雅的编程方式。]]></content>
+    <content type="text"><![CDATA[Java语法糖是一种在不影响功能的情况下为程序员提供的便捷的语法使用方式。 Tye-with-Resources就是这样一个用来便捷的在try语句块中申请和释放资源的语法使用方式。通过这个语法糖,可以有效的避免在finally中忘记释放资源的情况。类似的思想在Python的with语法中也有体现。推荐一个IDEA插件，sonarlint。通过sonarlint的智能提示，我们可以改正很多的不好的编码习惯。 资源什么是资源，对于非内存的操作，比如磁盘，数据库，比如网络等其他设备。都有一个临界资源的概念。什么是临界资源？在操作系统知识体系中，把一次只能由一个进程使用的资源称为临界资源，所以所有的进程使用这些资源的时候都是互斥的。那么我们在编程的时候，一定要注意临界资源的申请和释放。 try-catch-finally方式传统的资源申请方式是在try中申请，在catch中处理异常，在finally中释放资源。但是程序毕竟是人写的，总会有遗忘的时候。当程序员遗忘后，Java编译器是不会报错的，但是会出bug。try-catch-finally方式如下：1234567891011121314public static void method()&#123; InputStream inputStream=null; try &#123; inputStream= new FileInputStream("test"); &#125; catch (Exception e) &#123; &#125; finally &#123; try &#123; inputStream.close(); &#125; catch (IOException e) &#123; e.printStackTrace(); &#125; &#125;&#125; 在上述的代码中，关闭资源的方式非常繁琐。容易遗忘。 try-with-Resources 方法try-with-Resources 是JDK1.7之后的语法糖。旨在简化这种繁琐的关闭资源的方式。代码如下：123456789//捕获异常public static void try2() &#123; try (BufferedInputStream bin = new BufferedInputStream(new FileInputStream(new File("test.txt"))); BufferedOutputStream bout = new BufferedOutputStream(new FileOutputStream(new File("out.txt")));) &#123; // 执行完try中的语句过后,资源自动关闭 &#125; catch (IOException e) &#123; e.printStackTrace(); &#125;&#125; 在上述的代码中，没有了finally操作，简化了程序员的操作。是一种优雅的编程方式。]]></content>
       <categories>
         <category>杂记</category>
       </categories>
@@ -20,26 +66,19 @@
       </categories>
       <tags>
         <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[梯度下降法理解]]></title>
-    <url>%2F2019%2F04%2F28%2F%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95%E7%90%86%E8%A7%A3%2F</url>
-    <content type="text"><![CDATA[概念回顾在理解梯度下降法之前，我们先来回顾以前学习的数学知识 微分微分的意义是什么？我们来复习一下高数知识。 函数图像某切点的斜率 函数的变化率 常用的微分]]></content>
-      <tags>
-        <tag>数学</tag>
-        <tag>机器学习</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[无重复字符的最长子串]]></title>
     <url>%2F2019%2F04%2F27%2F%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2%2F</url>
-    <content type="text"><![CDATA[题目给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。 示例 1:123输入: &quot;abcabcbb&quot;输出: 3 解释: 因为无重复字符的最长子串是 &quot;abc&quot;，所以其长度为 3。 示例 2:123输入: &quot;bbbbb&quot;输出: 1解释: 因为无重复字符的最长子串是 &quot;b&quot;，所以其长度为 1。 示例 3:1234输入: &quot;pwwkew&quot;输出: 3解释: 因为无重复字符的最长子串是 &quot;wke&quot;，所以其长度为 3。 请注意，你的答案必须是 子串 的长度，&quot;pwke&quot; 是一个子序列，不是子串。 思路这种字符串题目首先想到的思路是从左向右进行扫描，按照人脑的想法想法一步一步的向后扫，所以我们可以维持一个滑动窗口，每当出现一个重复的字母左界后移，没有就右界后移，每次循环的窗口都进行比较，取最大的数作为结果。 代码123456789101112131415161718192021222324class Solution &#123; public int lengthOfLongestSubstring(String s) &#123; //定义结果 int result = 0; //滑动窗口的左右[i,j) int i=0,j=0; //定义一个Set，保证每个字母只出现一次 Set&lt;Character&gt; set = new HashSet&lt;&gt;(); //防止过界 while(i&lt;s.length() &amp;&amp; j&lt;s.length())&#123; //如果当前字符在set中不存在 if(!set.contains(s.charAt(j)))&#123; //将当前字符加入set并将右界后移 set.add(s.charAt(j++)); //取所有出现窗口的最大值 result = Math.max(result,j-i); &#125;else&#123; //如果出现重复的字符，将左界后移一位 set.remove(s.charAt(i++)); &#125; &#125; return result; &#125;&#125;]]></content>
+    <content type="text"><![CDATA[题目给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。 示例 1:123输入: "abcabcbb"输出: 3 解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3。 示例 2:123输入: "bbbbb"输出: 1解释: 因为无重复字符的最长子串是 "b"，所以其长度为 1。 示例 3:1234输入: "pwwkew"输出: 3解释: 因为无重复字符的最长子串是 "wke"，所以其长度为 3。 请注意，你的答案必须是 子串 的长度，"pwke" 是一个子序列，不是子串。 思路这种字符串题目首先想到的思路是从左向右进行扫描，按照人脑的想法想法一步一步的向后扫，所以我们可以维持一个滑动窗口，每当出现一个重复的字母左界后移，没有就右界后移，每次循环的窗口都进行比较，取最大的数作为结果。 代码123456789101112131415161718192021222324class Solution &#123; public int lengthOfLongestSubstring(String s) &#123; //定义结果 int result = 0; //滑动窗口的左右[i,j) int i=0,j=0; //定义一个Set，保证每个字母只出现一次 Set&lt;Character&gt; set = new HashSet&lt;&gt;(); //防止过界 while(i&lt;s.length() &amp;&amp; j&lt;s.length())&#123; //如果当前字符在set中不存在 if(!set.contains(s.charAt(j)))&#123; //将当前字符加入set并将右界后移 set.add(s.charAt(j++)); //取所有出现窗口的最大值 result = Math.max(result,j-i); &#125;else&#123; //如果出现重复的字符，将左界后移一位 set.remove(s.charAt(i++)); &#125; &#125; return result; &#125;&#125;]]></content>
       <categories>
         <category>LeetCode刷题记录</category>
       </categories>
       <tags>
         <tag>算法</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -51,6 +90,7 @@
       </categories>
       <tags>
         <tag>算法</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -62,6 +102,7 @@
       </categories>
       <tags>
         <tag>算法</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -73,7 +114,7 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>内存模型</tag>
+        <tag>Java虚拟机</tag>
       </tags>
   </entry>
 </search>
