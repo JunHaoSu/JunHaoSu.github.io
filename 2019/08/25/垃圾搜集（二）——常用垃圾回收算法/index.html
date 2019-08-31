@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="算法,C++,">
+  <meta name="keywords" content="Java,Java虚拟机,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="题目给定两个大小为 m 和 n 的有序数组 nums1 和 nums2。 请你找出这两个有序数组的中位数，并且要求算法的时间复杂度为 O(log(m + n))。 你可以假设 nums1 和 nums2 不会同时为空。 示例 1:1234nums1 = [1, 3]nums2 = [2]则中位数是 2.0 示例 2:1234nums1 = [1, 2]nums2 = [3, 4]则中位数是 (2">
-<meta name="keywords" content="算法,C++">
+<meta name="description" content="标记-清除算法算法分为两个部分：标记和清除。首先标记出需要回收的对象，然后统一的回收。 问题如下：  效率太低，标记和清除两个步骤的效率都不高。 该算法完成后会产生大量的内存不连续碎片，碎片太多会导致后来再进行分配大对象时无法得到足够的内存而不得不再触发一次垃圾搜集动作。">
+<meta name="keywords" content="Java,Java虚拟机">
 <meta property="og:type" content="article">
-<meta property="og:title" content="两个有序数组的中位数">
-<meta property="og:url" content="http://yoursite.com/2019/04/30/两个有序数组的中位数/index.html">
+<meta property="og:title" content="垃圾搜集（二）——常用垃圾回收算法">
+<meta property="og:url" content="http://yoursite.com/2019/08/25/垃圾搜集（二）——常用垃圾回收算法/index.html">
 <meta property="og:site_name" content="SJH 的流水账">
-<meta property="og:description" content="题目给定两个大小为 m 和 n 的有序数组 nums1 和 nums2。 请你找出这两个有序数组的中位数，并且要求算法的时间复杂度为 O(log(m + n))。 你可以假设 nums1 和 nums2 不会同时为空。 示例 1:1234nums1 = [1, 3]nums2 = [2]则中位数是 2.0 示例 2:1234nums1 = [1, 2]nums2 = [3, 4]则中位数是 (2">
+<meta property="og:description" content="标记-清除算法算法分为两个部分：标记和清除。首先标记出需要回收的对象，然后统一的回收。 问题如下：  效率太低，标记和清除两个步骤的效率都不高。 该算法完成后会产生大量的内存不连续碎片，碎片太多会导致后来再进行分配大对象时无法得到足够的内存而不得不再触发一次垃圾搜集动作。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-23T23:09:33.280Z">
+<meta property="og:updated_time" content="2019-08-31T07:48:12.782Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="两个有序数组的中位数">
-<meta name="twitter:description" content="题目给定两个大小为 m 和 n 的有序数组 nums1 和 nums2。 请你找出这两个有序数组的中位数，并且要求算法的时间复杂度为 O(log(m + n))。 你可以假设 nums1 和 nums2 不会同时为空。 示例 1:1234nums1 = [1, 3]nums2 = [2]则中位数是 2.0 示例 2:1234nums1 = [1, 2]nums2 = [3, 4]则中位数是 (2">
+<meta name="twitter:title" content="垃圾搜集（二）——常用垃圾回收算法">
+<meta name="twitter:description" content="标记-清除算法算法分为两个部分：标记和清除。首先标记出需要回收的对象，然后统一的回收。 问题如下：  效率太低，标记和清除两个步骤的效率都不高。 该算法完成后会产生大量的内存不连续碎片，碎片太多会导致后来再进行分配大对象时无法得到足够的内存而不得不再触发一次垃圾搜集动作。">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/30/两个有序数组的中位数/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/25/垃圾搜集（二）——常用垃圾回收算法/">
 
 
 
 
 
-  <title>两个有序数组的中位数 | SJH 的流水账</title>
+  <title>垃圾搜集（二）——常用垃圾回收算法 | SJH 的流水账</title>
   
 
 
@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/30/两个有序数组的中位数/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/25/垃圾搜集（二）——常用垃圾回收算法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jaxon Su">
@@ -312,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">两个有序数组的中位数</h1>
+          <h1 class="post-title" itemprop="name headline">垃圾搜集（二）——常用垃圾回收算法</h1>
         
 
         <div class="post-meta">
@@ -324,8 +324,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-30T09:35:35+08:00">
-                2019-04-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-25T21:30:05+08:00">
+                2019-08-25
               </time>
             
 
@@ -347,8 +347,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode刷题记录/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode刷题记录</span>
+                  <a href="/categories/Java虚拟机/" itemprop="url" rel="index">
+                    <span itemprop="name">Java虚拟机</span>
                   </a>
                 </span>
 
@@ -384,20 +384,24 @@
       
 
       
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定两个大小为 m 和 n 的有序数组 nums1 和 nums2。</p>
-<p>请你找出这两个有序数组的中位数，并且要求算法的时间复杂度为 O(log(m + n))。</p>
-<p>你可以假设 nums1 和 nums2 不会同时为空。</p>
-<p>示例 1:<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nums1 = [<span class="number">1</span>, <span class="number">3</span>]</span><br><span class="line">nums2 = [<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line">则中位数是 <span class="number">2.0</span></span><br></pre></td></tr></table></figure></p>
-<p>示例 2:<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nums1 = [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line">nums2 = [<span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line"></span><br><span class="line">则中位数是 (<span class="number">2</span> + <span class="number">3</span>)/<span class="number">2</span> = <span class="number">2.5</span></span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>在两个有序数组中找到中位数还没怎么想过，先回顾一下中位数的定义，一个有序数组，如果是奇数个，中位数是最中间那个数，如果是偶数个，中位数是中间两个数的平均数，拿到题的第一反应是组合成一个有序数组，但是时间复杂度告诉自己不允许这个做。那么还真的必须处理两个有序数组的中位数。为了方便，我们统一将中位数看成（m+n+1)/2和（m+n+2)/2的平均数，如果m+n是奇数，则（m+n+1)/2和（m+n+2)/2是同一个位置。</p>
-<p>K是m+n的中间值，如何在两个有序数组中找到K元素呢?，使用i,j来标记两个数组的起始位置。<br>边界条件如下：</p>
+        <h2 id="标记-清除算法"><a href="#标记-清除算法" class="headerlink" title="标记-清除算法"></a>标记-清除算法</h2><p>算法分为两个部分：标记和清除。首先标记出需要回收的对象，然后统一的回收。</p>
+<p>问题如下：</p>
 <ul>
-<li>某一个数组空白，直接取另一个数组的中位数</li>
-<li>K=1，即当两个数组只有一个数字的时候，且取偶数个的左边较小的数字，即比较num1和num2的i，j位置上的数就可以了。</li>
+<li>效率太低，标记和清除两个步骤的效率都不高。</li>
+<li>该算法完成后会产生大量的内存不连续碎片，碎片太多会导致后来再进行分配大对象时无法得到足够的内存而不得不再触发一次垃圾搜集动作。<a id="more"></a>
+<h2 id="复制算法"><a href="#复制算法" class="headerlink" title="复制算法"></a>复制算法</h2></li>
 </ul>
-<p>我们使用二分法对数组进行搜索，首先对K二分，分别在num1和num2中查找K/2个单元存在第K/2个数吗？如果存在，取出来，不存在就赋最大值</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public double findMedianSortedArrays(int[] nums1, int[] nums2) &#123;</span><br><span class="line">        int m = nums1.<span class="built_in">length</span>, n = nums2.<span class="built_in">length</span>, left = (m + n + <span class="number">1</span>) / <span class="number">2</span>, right = (m + n + <span class="number">2</span>) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">return</span> (findKth(nums1, <span class="number">0</span>, nums2, <span class="number">0</span>, left) + findKth(nums1, <span class="number">0</span>, nums2, <span class="number">0</span>, right)) / <span class="number">2.0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    int findKth(int[] nums1, int <span class="built_in">i</span>, int[] nums2, int <span class="built_in">j</span>, int k) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">i</span> &gt;= nums1.<span class="built_in">length</span>) <span class="keyword">return</span> nums2[<span class="built_in">j</span> + k - <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">j</span> &gt;= nums2.<span class="built_in">length</span>) <span class="keyword">return</span> nums1[<span class="built_in">i</span> + k - <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span> (k == <span class="number">1</span>) <span class="keyword">return</span> Math.<span class="built_in">min</span>(nums1[<span class="built_in">i</span>], nums2[<span class="built_in">j</span>]);</span><br><span class="line">        int midVal1 = (<span class="built_in">i</span> + k / <span class="number">2</span> - <span class="number">1</span> &lt; nums1.<span class="built_in">length</span>) ? nums1[<span class="built_in">i</span> + k / <span class="number">2</span> - <span class="number">1</span>] : Integer.MAX_VALUE;</span><br><span class="line">        int midVal2 = (<span class="built_in">j</span> + k / <span class="number">2</span> - <span class="number">1</span> &lt; nums2.<span class="built_in">length</span>) ? nums2[<span class="built_in">j</span> + k / <span class="number">2</span> - <span class="number">1</span>] : Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">if</span> (midVal1 &lt; midVal2) &#123;</span><br><span class="line">            <span class="keyword">return</span> findKth(nums1, <span class="built_in">i</span> + k / <span class="number">2</span>, nums2, <span class="built_in">j</span>, k - k / <span class="number">2</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> findKth(nums1, <span class="built_in">i</span>, nums2, <span class="built_in">j</span> + k / <span class="number">2</span>, k - k / <span class="number">2</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>复制算法解决了效率的问题，复制算法的思想是将内存区域分成两块，每次只使用其中的一块，当这一块的内存使用完了的时候就将标记存活的对象复制到另一块内存中去。然后统一清除这一块使用的内存。这种方法高效且简单，根本不用考虑内存碎片的情况，但是代价时将使用的内存缩小到了原来的一半。</p>
+<p>但是新生代中的对象都有一个特性就是朝生夕死，所以基本每次回收都能够回收绝大部分的内存。商用虚拟机中的新生代回收算法并不是按照1:1来进行划分的。它将新生代分为较大的Eden区和两块较小的Survivor区，每次使用Eden和其中的一块Survivor。每次回收使用中的内存，统一复制到未使用的Survivor中。然后将Eden和Survivor清空。HotSpot虚拟机的比例是8:1。当Survivor不够用的时候，会直接通过分配担保机制进入老年代。如何分配担保请点击这里。</p>
+<p>问题如下：</p>
+<ul>
+<li>会浪费掉一定的内存，但是现在内存足够大，浪费掉的不值一提。</li>
+<li>如果回收过后的内存大于Survivor的空间，会放不下，但是解决办法是使用分配担保机制将内存直接放入老年代。</li>
+</ul>
+<h2 id="标记-整理算法"><a href="#标记-整理算法" class="headerlink" title="标记-整理算法"></a>标记-整理算法</h2><p>标记整理算法适合那种对象存活率较高的内存区域，比如老年代，如果老年代依然使用复制算法的话，效率太低。且老年代的内存比较稳定且大，如果使用复制算法，会导致出现所有对象都存活的极端情况，导致效率又低时间又慢。所以老年代一般使用的就是标记整理算法。</p>
+<p>标记整理，顾名思义就是先标记，再整理。首先让所有标记存活的对象那个向一端移动，然后直接清理掉头指针以外的区域就行了，相当于整理的动作。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>每个Java对象的生命周期是不一样的。新生代都是朝生夕死的对象，老年代的对象一般也是长期存活的。当新生代的Survivor区某个对象存活一定的次数后就可以将它移动到老年代。且不同的区域应该使用不同的算法，新生代使用复制算法，效率高又快，老年代使用标记整理算法，这就是分代搜集的思想。</p>
+
       
     </div>
     
@@ -414,9 +418,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/算法/" rel="tag"># 算法</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
-            <a href="/tags/C/" rel="tag"># C++</a>
+            <a href="/tags/Java虚拟机/" rel="tag"># Java虚拟机</a>
           
         </div>
       
@@ -429,8 +433,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/27/无重复字符的最长子串/" rel="next" title="无重复字符的最长子串">
-                <i class="fa fa-chevron-left"></i> 无重复字符的最长子串
+              <a href="/2019/08/25/垃圾搜集（一）——如何判定对象已死/" rel="next" title="垃圾搜集（一）——如何判定对象已死">
+                <i class="fa fa-chevron-left"></i> 垃圾搜集（一）——如何判定对象已死
               </a>
             
           </div>
@@ -438,10 +442,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/24/Try-with-Resources/" rel="prev" title="Try-with-Resources">
-                Try-with-Resources <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -609,7 +609,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#标记-清除算法"><span class="nav-number">1.</span> <span class="nav-text">标记-清除算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复制算法"><span class="nav-number">2.</span> <span class="nav-text">复制算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标记-整理算法"><span class="nav-number">3.</span> <span class="nav-text">标记-整理算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
