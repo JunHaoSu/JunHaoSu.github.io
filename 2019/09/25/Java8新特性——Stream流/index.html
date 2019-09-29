@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="SJH 的流水账">
 <meta property="og:description" content="流是Java提供的一组操作集合的API，向流水线一样处理集合中的元素。元素流经过中间操作(intermediate operation)的处理，最后在终端操作(terminal operation)得到前面的处理结果。Stream流和Lambda表达式一样能够大大的提高开发效率。 流的简单使用承接上篇的Lambda表达式介绍。我们同样使用学生类来进行处理。 创建流有两种创建流的方法，我们经常会使用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-29T12:55:01.585Z">
+<meta property="og:updated_time" content="2019-09-29T12:58:46.620Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java8新特性——Stream流">
 <meta name="twitter:description" content="流是Java提供的一组操作集合的API，向流水线一样处理集合中的元素。元素流经过中间操作(intermediate operation)的处理，最后在终端操作(terminal operation)得到前面的处理结果。Stream流和Lambda表达式一样能够大大的提高开发效率。 流的简单使用承接上篇的Lambda表达式介绍。我们同样使用学生类来进行处理。 创建流有两种创建流的方法，我们经常会使用">
@@ -392,6 +392,7 @@
 <li>Stream类的静态of()方法创建流。</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; createStream = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"><span class="comment">//顺序流</span></span><br><span class="line">Stream&lt;String&gt; stream = createStream.stream();</span><br><span class="line"><span class="comment">//并行流</span></span><br><span class="line">Stream&lt;String&gt; parallelStream = createStream.parallelStream();</span><br><span class="line"><span class="comment">//of()方法创建</span></span><br><span class="line">Stream&lt;String&gt; stringStream = Stream.of(createStream.toArray(<span class="keyword">new</span> String[createStream.size()]));</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h3 id="流的分类"><a href="#流的分类" class="headerlink" title="流的分类"></a>流的分类</h3><p>流分为顺序流和并行流，并行流会使用多线程同时对集合中的多个元素进行处理，在使用并行流的时候要注意线程安全问题。</p>
 <h3 id="终端操作和中间操作"><a href="#终端操作和中间操作" class="headerlink" title="终端操作和中间操作"></a>终端操作和中间操作</h3><p>终端操作会消费Stream流，并且产生一个结果，一旦被消费过了，就不被重用</p>
 <p>中间操作会产生另外一个流，中间操作并不是立即发生的，在中间操作创建的新流执行完终端操作后，中间操作指定的操作才会发生，也就是延迟性。流的中间操作有无状态和有状态两种。</p>

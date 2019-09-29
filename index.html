@@ -386,8 +386,7 @@
 
       
         
-          
-            <p>流是Java提供的一组操作集合的API，向流水线一样处理集合中的元素。元素流经过中间操作(intermediate operation)的处理，最后在终端操作(terminal operation)得到前面的处理结果。Stream流和Lambda表达式一样能够大大的提高开发效率。</p>
+          <p>流是Java提供的一组操作集合的API，向流水线一样处理集合中的元素。元素流经过中间操作(intermediate operation)的处理，最后在终端操作(terminal operation)得到前面的处理结果。Stream流和Lambda表达式一样能够大大的提高开发效率。</p>
 <h2 id="流的简单使用"><a href="#流的简单使用" class="headerlink" title="流的简单使用"></a>流的简单使用</h2><p>承接上篇的Lambda表达式介绍。我们同样使用学生类来进行处理。</p>
 <h3 id="创建流"><a href="#创建流" class="headerlink" title="创建流"></a>创建流</h3><p>有两种创建流的方法，我们经常会使用第一种。</p>
 <ul>
@@ -395,45 +394,13 @@
 <li>Stream类的静态of()方法创建流。</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; createStream = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"><span class="comment">//顺序流</span></span><br><span class="line">Stream&lt;String&gt; stream = createStream.stream();</span><br><span class="line"><span class="comment">//并行流</span></span><br><span class="line">Stream&lt;String&gt; parallelStream = createStream.parallelStream();</span><br><span class="line"><span class="comment">//of()方法创建</span></span><br><span class="line">Stream&lt;String&gt; stringStream = Stream.of(createStream.toArray(<span class="keyword">new</span> String[createStream.size()]));</span><br></pre></td></tr></table></figure>
-<h3 id="流的分类"><a href="#流的分类" class="headerlink" title="流的分类"></a>流的分类</h3><p>流分为顺序流和并行流，并行流会使用多线程同时对集合中的多个元素进行处理，在使用并行流的时候要注意线程安全问题。</p>
-<h3 id="终端操作和中间操作"><a href="#终端操作和中间操作" class="headerlink" title="终端操作和中间操作"></a>终端操作和中间操作</h3><p>终端操作会消费Stream流，并且产生一个结果，一旦被消费过了，就不被重用</p>
-<p>中间操作会产生另外一个流，中间操作并不是立即发生的，在中间操作创建的新流执行完终端操作后，中间操作指定的操作才会发生，也就是延迟性。流的中间操作有无状态和有状态两种。</p>
-<ul>
-<li>无状态表示元素之间互不影响，单独处理，和其他元素无关。</li>
-<li>有状态表示元素之间是互相关联的，比如查找最小值最大值，排序，求和之类的操作。</li>
-</ul>
-<h3 id="常用流操作"><a href="#常用流操作" class="headerlink" title="常用流操作"></a>常用流操作</h3><h4 id="中间操作"><a href="#中间操作" class="headerlink" title="中间操作"></a>中间操作</h4><ul>
-<li>distinct()，去重操作，将Stream流中的元素去重后，返回一个新的流。</li>
-<li>filter(Predicate predicate)：筛选符合条件的元素后重新生成一个流。</li>
-<li>map(Function mapper)：产生一个新流，对调用的流中的元素应用mapper，新流中包含这些元素，一般用作转换，或者单独抽出某个字段组成一个新的流。</li>
-<li>sorted(Comparator) 将流按照Comparator排序。</li>
-<li>peek(func) 把每个元素传入fun执行，执行后的元素组成一个新流。</li>
-</ul>
-<h4 id="终端操作"><a href="#终端操作" class="headerlink" title="终端操作"></a>终端操作</h4><ul>
-<li>void forEach（Consumer action)：遍历流中的元素。（终端操作）</li>
-<li>Optional min(Comparator comparator)和Optional max(Comparator comparator)：获取流中的最大最小值，比较器可以自己定义。（终端操作）</li>
-<li>findFirst() 返回第一个元素。</li>
-<li>findAny() 返回任意元素。用作随机元素提取。</li>
-<li>anyMatch(Predicate) 任意元素匹配时返回true</li>
-<li>allMatch(Predicate) 所有元素匹配时返回true</li>
-<li>noneMatch(Predicate) 没有元素匹配时返回true</li>
-<li>reduce(func) 从流中计算某个值，接受一个二元函数作为累计器，从前两个元素开始持续应用它，累积器的中间结果作为第一个参数，流元素作为第二个参数。</li>
-<li>reduce(a,fun) a为幺元值，作为累计器的起点</li>
-<li>reduce(a,func1,func2)  与二元变形类似，并发操作中，当累积器的第一个参数与第二个参数都为流元素类型时，可以对各个中间结果也应用累积器进行合并，但是当累积器的第一个参数不是流元素类型而是类型T的时候，各个中间结果也为类型T，需要fun2来将各个中间结果进行合并</li>
-</ul>
-<h4 id="搜集器"><a href="#搜集器" class="headerlink" title="搜集器"></a>搜集器</h4><p>常用的搜集器如下：</p>
-<ul>
-<li>collect(Collector)</li>
-<li>iterator() 迭代器</li>
-<li>forEach(fun) 遍历</li>
-<li>toArray() 返回基本类型数组</li>
-<li>Collectors.toList() 搜集流组成一个List</li>
-<li>Collectors.toSet() 搜集流组成一个Set</li>
-<li>Collectors.toMap(fun1,fun2) 搜集流组成一个Map,fun1是键，fun2是值</li>
-</ul>
-<h3 id="流使用例子"><a href="#流使用例子" class="headerlink" title="流使用例子"></a>流使用例子</h3><p>使用shang<br>1.按照成绩排序</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/09/25/Java8新特性——Stream流/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
