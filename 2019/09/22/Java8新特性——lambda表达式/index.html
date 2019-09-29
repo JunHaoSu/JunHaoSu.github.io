@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="最近接触到lambda表达式，实在是太方便了，就在此总结一下。lambda表达式由三个部分组成。第一部分为一个括号内用逗号分隔的形式参数，参数是函数式接口里面方法的参数；第二部分为一个箭头符号：-&amp;gt;；第三部分为方法体，可以是表达式和代码块，如果是代码块的话，需要使用{}将语句括起来。语法如下 12(paramterts) -&amp;gt; expression;(int a, int b) -&amp;g">
+<meta name="description" content="爱折腾">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java8新特性——lambda表达式和Stream">
+<meta property="og:title" content="Java8新特性——lambda表达式">
 <meta property="og:url" content="http://yoursite.com/2019/09/22/Java8新特性——lambda表达式/index.html">
 <meta property="og:site_name" content="SJH 的流水账">
-<meta property="og:description" content="最近接触到lambda表达式，实在是太方便了，就在此总结一下。lambda表达式由三个部分组成。第一部分为一个括号内用逗号分隔的形式参数，参数是函数式接口里面方法的参数；第二部分为一个箭头符号：-&amp;gt;；第三部分为方法体，可以是表达式和代码块，如果是代码块的话，需要使用{}将语句括起来。语法如下 12(paramterts) -&amp;gt; expression;(int a, int b) -&amp;g">
+<meta property="og:description" content="爱折腾">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-24T14:07:05.050Z">
+<meta property="og:updated_time" content="2019-09-29T12:50:00.485Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java8新特性——lambda表达式和Stream">
-<meta name="twitter:description" content="最近接触到lambda表达式，实在是太方便了，就在此总结一下。lambda表达式由三个部分组成。第一部分为一个括号内用逗号分隔的形式参数，参数是函数式接口里面方法的参数；第二部分为一个箭头符号：-&amp;gt;；第三部分为方法体，可以是表达式和代码块，如果是代码块的话，需要使用{}将语句括起来。语法如下 12(paramterts) -&amp;gt; expression;(int a, int b) -&amp;g">
+<meta name="twitter:title" content="Java8新特性——lambda表达式">
+<meta name="twitter:description" content="爱折腾">
 
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>Java8新特性——lambda表达式和Stream | SJH 的流水账</title>
+  <title>Java8新特性——lambda表达式 | SJH 的流水账</title>
   
 
 
@@ -312,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java8新特性——lambda表达式和Stream</h1>
+          <h1 class="post-title" itemprop="name headline">Java8新特性——lambda表达式</h1>
         
 
         <div class="post-meta">
@@ -384,27 +384,7 @@
       
 
       
-        <p>最近接触到lambda表达式，实在是太方便了，就在此总结一下。lambda表达式由三个部分组成。第一部分为一个括号内用逗号分隔的形式参数，参数是函数式接口里面方法的参数；第二部分为一个箭头符号：-&gt;；第三部分为方法体，可以是表达式和代码块，如果是代码块的话，需要使用{}将语句括起来。语法如下</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(paramterts) -&gt; expression;</span><br><span class="line">(<span class="keyword">int</span> a, <span class="keyword">int</span> b) -&gt; &#123;<span class="keyword">return</span> a+b&#125;;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>一个标准的例子如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 匿名内部类</span></span><br><span class="line">Runnable r1 = <span class="keyword">new</span> Runnable()&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.prinln(<span class="string">"Hello world!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Lambda 表达式</span></span><br><span class="line">Runnable r1 = () -&gt; System.out.println(<span class="string">"Hello world!"</span>);</span><br></pre></td></tr></table></figure>
-<p>在上述的例子中，我们发现了Lambda表达式的好处，简洁，减少了很多的模板代码，同样的语义，Lambda表达式只需要关心具体的实现就可以了。</p>
-<h2 id="lambda表达式的本质"><a href="#lambda表达式的本质" class="headerlink" title="lambda表达式的本质"></a>lambda表达式的本质</h2><p>lambda表达式本质是一个匿名函数。对于Java世界里一切都是对象来说有些另类，但是确实是Lambda表达式为Java引入了函数式编程的思想，虽然在具体实现中，Lambda表达式依附于一种特别的对象——函数式接口。Lambda表达式即没有声明的方法，也没有访问修饰符，返回值声明和名字。</p>
-<h3 id="函数式接口"><a href="#函数式接口" class="headerlink" title="函数式接口"></a>函数式接口</h3><p>函数式接口就是只包含一个抽象方法的接口。Lambda表达式的本质就是实现一个函数式接口。传统的函数式接口实现可以如下表示：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">MylambdaInterface</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">doSomething</span><span class="params">(String s)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyInterfaceImpl</span> <span class="keyword">implements</span> <span class="title">MylambdaInterface</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doSomething</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Lambda表达式实现如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">test = (s) -&gt; System.out.println(s);</span><br></pre></td></tr></table></figure>
-<p>Lambda表达式可以直接将一段代码赋值给一个变量，这段代码，也就是箭头的右边就是接口的实现，左边就是接口的参数。等号左边就是函数的返回值。简洁清晰。</p>
-<h2 id="结合Stream的操作"><a href="#结合Stream的操作" class="headerlink" title="结合Stream的操作"></a>结合Stream的操作</h2><p>Lambda对于集合的操作是非常普遍的，它对于并行操作支持很好，能够大大简化代码的行数，缺点是省略的地方没写过Lambda表达式的人可能看不懂。举一些例子来看Lambda表达式操作集合的便携性，我们先看看什么是Stream。</p>
-<p>Java8中的Stream是对集合(Collection)对象功能的增强，它专注于对集合对象进行各种非常便利，高效的聚合操作。而且Lambda表达式和Stream天然的支持并行程序，他们合作起来能够大大的提高程序的可维护性。Stream(流)更像是一个升级版本的迭代器。单向不可往复，像流水一样一去不复返。但是Stream可以作并行操作。展示几个常用的操作。</p>
-<p>以学生类为例，学生有两个字段，name和score。</p>
-<p>1.将所有不及格的学生单独抽一个List出来。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">notPassStudent</span><span class="params">(List&lt;Student&gt; students)</span></span>&#123;</span><br><span class="line">    List&lt;Student&gt; filterStudent = students.stream().filter(one -&gt; one.getScore()  &lt; <span class="number">60</span>).collect(Collectors.toList());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>而传统的方式是怎么做的呢？</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">notPassStudent</span><span class="params">(List&lt;Student&gt; students)</span></span>&#123;</span><br><span class="line">    List&lt;Student&gt; filterStudent = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span>(Student student: students)&#123;</span><br><span class="line">        <span class="keyword">if</span>(student.getScore() &lt; <span class="number">60</span>)&#123;</span><br><span class="line">            filterStudent.add(student);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>高下立判，用Lambda和Stream更加的简洁常用filter进行筛选的动作，后面将具体的学习Stream流的操作。现在我们只讨论使用场景。</p>
-
+        
       
     </div>
     
@@ -443,6 +423,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/25/Java8新特性——Stream流/" rel="prev" title="Java8新特性——Stream流">
+                Java8新特性——Stream流 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -494,17 +478,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -521,7 +496,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -600,22 +575,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#lambda表达式的本质"><span class="nav-number">1.</span> <span class="nav-text">lambda表达式的本质</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数式接口"><span class="nav-number">1.1.</span> <span class="nav-text">函数式接口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结合Stream的操作"><span class="nav-number">2.</span> <span class="nav-text">结合Stream的操作</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
