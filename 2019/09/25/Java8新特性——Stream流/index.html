@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="SJH 的流水账">
 <meta property="og:description" content="流是Java提供的一组操作集合的API，向流水线一样处理集合中的元素。元素流经过中间操作(intermediate operation)的处理，最后在终端操作(terminal operation)得到前面的处理结果。Stream流和Lambda表达式一样能够大大的提高开发效率。 流的简单使用承接上篇的Lambda表达式介绍。我们同样使用学生类来进行处理。 创建流有两种创建流的方法，我们经常会使用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-29T13:41:14.992Z">
+<meta property="og:updated_time" content="2019-10-26T10:42:41.963Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java8新特性——Stream流">
 <meta name="twitter:description" content="流是Java提供的一组操作集合的API，向流水线一样处理集合中的元素。元素流经过中间操作(intermediate operation)的处理，最后在终端操作(terminal operation)得到前面的处理结果。Stream流和Lambda表达式一样能够大大的提高开发效率。 流的简单使用承接上篇的Lambda表达式介绍。我们同样使用学生类来进行处理。 创建流有两种创建流的方法，我们经常会使用">
@@ -442,7 +442,7 @@
 <p>6.有没有人考100分</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">boolean</span> anyMatch = students.stream().anyMatch(</span><br><span class="line">        student -&gt; student.getScore().equals(<span class="number">100</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 <p>7.统计及格的有多少人</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">long</span> count = students.stream().filter(str -&gt; </span><br><span class="line">        student.getScore() &gt;= <span class="number">60</span></span><br><span class="line">).count();</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">long</span> count = students.stream().filter(str -&gt;  </span><br><span class="line">        student.getScore() &gt;= <span class="number">60</span></span><br><span class="line">).count();</span><br></pre></td></tr></table></figure>
 <p>8.对于不及格的学生，我们把它的成绩改成60</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Student&gt; peek = students.stream().peek(student -&gt;&#123;</span><br><span class="line">    <span class="keyword">if</span>(student.getScore() &lt; <span class="number">60</span>)&#123;</span><br><span class="line">        student.setScore(<span class="number">60</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).collect(Collectors.toList());</span><br></pre></td></tr></table></figure>
 
