@@ -89,7 +89,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/10/19/JVM常用虚拟机参数与分析/jinfo.png">
 <meta property="og:image" content="http://yoursite.com/2019/10/19/JVM常用虚拟机参数与分析/jinfo2.png">
-<meta property="og:updated_time" content="2019-10-26T11:06:41.857Z">
+<meta property="og:updated_time" content="2019-10-26T11:09:40.913Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM常用虚拟机参数与分析">
 <meta name="twitter:description" content="前段时间初步了解了JVM相关的书籍，读《深入理解JAVA虚拟机》。但是仅限与阅读，最近开始着手解决实际项目中的一些问题。 常用JVM参数设置我们在启动JAVA项目的时候时可以带启动参数的。无论是Tomcat，还是原生的JAVA项目。现在来总结一下常用的参数。 堆 -Xms 设置堆的最小空间大小，也是初始的大小 -Xmx 设置堆的最大空间大小，如果设置的与Xmx相同就是不会扩展堆内存 -Xmn 设置">
@@ -399,9 +399,9 @@
 <li>-XX:SurvivorRatio 新生代中Eden区和Survivor区的大小比值，默认是4。也就是Eden:Survivor1:Survivor2 = 8:1:1</li>
 <li>-XX:MaxTenuringThreshold 对象的年龄，即新生代的对象挺过多少次minor GC就可以进入老年代，默认是15。设置为0 就代表Survivor区没用了，存活对象直接进入老年代，所以一般会把这个值设置大一点，适合的对象使用适合的回收算法，只有活的够长，才有资格使用标记-整理算法。</li>
 <li>-XX:PretenureSizeThreshold 还记得分配担保机制吗？如果对象比Survivor区还大，那么可以直接进入老年代，这个选项可以设置多大的内存可以直接进入老年代。<a id="more"></a>
-<h3 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h3></li>
+</li>
 </ul>
-<p>方法区一般回收的效率很低，这里的内存是几乎不会回收的加载的类信息，常量，静态变量，即时编译器编译后的代码等数据，一般这些东西随程序启动而产生，随程序终止而消失，Spring启动后在程序运行期间不会有太大的变动。</p>
+<h3 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h3><p>方法区一般回收的效率很低，这里的内存是几乎不会回收的加载的类信息，常量，静态变量，即时编译器编译后的代码等数据，一般这些东西随程序启动而产生，随程序终止而消失，Spring启动后在程序运行期间不会有太大的变动。</p>
 <ul>
 <li>-XX:PermSize：方法区初始内存分配大小</li>
 <li>-XX:MaxPermSize：方法区分配的内存的最大上限。</li>
