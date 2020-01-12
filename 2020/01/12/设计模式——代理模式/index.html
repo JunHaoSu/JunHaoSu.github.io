@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="设计模式,">
 
 
 
@@ -79,16 +79,20 @@
 
 
 
-<meta name="description" content="爱折腾">
-<meta property="og:type" content="website">
-<meta property="og:title" content="SJH 的流水账">
-<meta property="og:url" content="http://yoursite.com/page/5/index.html">
+<meta name="description" content="代理模式，顾名思义就是造一个中间商，什么情况下会需要一个中间商呢？比如我们提供服务的对象不在本地，那么我们可以造一个本地的代理，用来代替远程的服务。不管远程的服务怎么改变，我们只需要变代理就可以，具体的业务逻辑不需要改变。再比如我提供的服务需要控制权限，那么可以使用一个代理，这个代理拥有对象的一部分使用权限，另一部分是无法使用的。  代理模式(Proxy)，为其他对象提供一种代理以控制对这个对象的">
+<meta name="keywords" content="设计模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式——代理模式">
+<meta property="og:url" content="http://yoursite.com/2020/01/12/设计模式——代理模式/index.html">
 <meta property="og:site_name" content="SJH 的流水账">
-<meta property="og:description" content="爱折腾">
+<meta property="og:description" content="代理模式，顾名思义就是造一个中间商，什么情况下会需要一个中间商呢？比如我们提供服务的对象不在本地，那么我们可以造一个本地的代理，用来代替远程的服务。不管远程的服务怎么改变，我们只需要变代理就可以，具体的业务逻辑不需要改变。再比如我提供的服务需要控制权限，那么可以使用一个代理，这个代理拥有对象的一部分使用权限，另一部分是无法使用的。  代理模式(Proxy)，为其他对象提供一种代理以控制对这个对象的">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2020/01/12/设计模式——代理模式/代理模式.png">
+<meta property="og:updated_time" content="2020-01-12T10:13:14.073Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SJH 的流水账">
-<meta name="twitter:description" content="爱折腾">
+<meta name="twitter:title" content="设计模式——代理模式">
+<meta name="twitter:description" content="代理模式，顾名思义就是造一个中间商，什么情况下会需要一个中间商呢？比如我们提供服务的对象不在本地，那么我们可以造一个本地的代理，用来代替远程的服务。不管远程的服务怎么改变，我们只需要变代理就可以，具体的业务逻辑不需要改变。再比如我提供的服务需要控制权限，那么可以使用一个代理，这个代理拥有对象的一部分使用权限，另一部分是无法使用的。  代理模式(Proxy)，为其他对象提供一种代理以控制对这个对象的">
+<meta name="twitter:image" content="http://yoursite.com/2020/01/12/设计模式——代理模式/代理模式.png">
 
 
 
@@ -118,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/page/5/">
+  <link rel="canonical" href="http://yoursite.com/2020/01/12/设计模式——代理模式/">
 
 
 
 
 
-  <title>SJH 的流水账</title>
+  <title>设计模式——代理模式 | SJH 的流水账</title>
   
 
 
@@ -143,8 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -269,9 +272,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -284,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/27/两数相加/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/12/设计模式——代理模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jaxon Su">
@@ -301,9 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/27/两数相加/" itemprop="url">两数相加</a></h1>
+          <h1 class="post-title" itemprop="name headline">设计模式——代理模式</h1>
         
 
         <div class="post-meta">
@@ -315,8 +316,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-27T21:07:54+08:00">
-                2019-04-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-12T15:14:17+08:00">
+                2020-01-12
               </time>
             
 
@@ -338,8 +339,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode刷题记录/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode刷题记录</span>
+                  <a href="/categories/设计模式/" itemprop="url" rel="index">
+                    <span itemprop="name">设计模式</span>
                   </a>
                 </span>
 
@@ -375,22 +376,20 @@
       
 
       
-        
-          <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。</p>
-<p>如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。</p>
-<p>您可以假设除了数字 0 之外，这两个数都不会以 0 开头。</p>
-<p>示例：</p>
+        <p>代理模式，顾名思义就是造一个中间商，什么情况下会需要一个中间商呢？比如我们提供服务的对象不在本地，那么我们可以造一个本地的代理，用来代替远程的服务。不管远程的服务怎么改变，我们只需要变代理就可以，具体的业务逻辑不需要改变。再比如我提供的服务需要控制权限，那么可以使用一个代理，这个代理拥有对象的一部分使用权限，另一部分是无法使用的。</p>
 <blockquote>
-<p>输入：(2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)<br><br><br>输出：7 -&gt; 0 -&gt; 8<br><br><br>原因：342 + 465 = 807</p>
+<p><strong><em>代理模式(Proxy)</em></strong>，为其他对象提供一种代理以控制对这个对象的访问。</p>
 </blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/27/两数相加/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+<p>代理模式的类图可以如下表示：<br><img src="/2020/01/12/设计模式——代理模式/代理模式.png" title="代理模式"></p>
+<a id="more"></a>
+<ul>
+<li><strong><em>Subject</em></strong> 抽象主题角色：可以是抽象类，也可以是接口。抽象主题是一个普通的业务类型，无特殊要求。</li>
+<li><strong><em>RealSubject</em></strong> 具体主题角色：也叫做被委托角色或被代理角色，是业务逻辑的具体执行者。</li>
+<li><strong><em>Proxy</em></strong> 代理主题角色：也叫做委托类或代理类。它负责对真实角色的应用，把所有抽象主题类定义的方法限制委托给真实主题角色实现，并且在具体主题角色处理完毕前后做预处理和善后处理工作。</li>
+</ul>
+<p>代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Proxy;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IRenting</span></span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 租房</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 租金</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function">Integer <span class="title">rent</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 房东</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HouseOwner</span> <span class="keyword">implements</span> <span class="title">IRenting</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">rent</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"房东租房，租金100"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">100</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 中介</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Proxy</span> <span class="keyword">implements</span> <span class="title">IRenting</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">rent</span><span class="params">()</span></span>&#123;</span><br><span class="line">        HouseOwner houseOwner = <span class="keyword">new</span> HouseOwner();</span><br><span class="line">        Integer rent = houseOwner.rent();</span><br><span class="line">        System.out.println(<span class="string">"中介租房，盈利一百"</span>);</span><br><span class="line">        <span class="keyword">return</span> rent+<span class="number">100</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ProxyPattern</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        Proxy proxy = <span class="keyword">new</span> Proxy();</span><br><span class="line">        Integer rent = proxy.rent();</span><br><span class="line">        System.out.println(<span class="string">"房客租金："</span>+rent+<span class="string">",房客和房东无关，并不知道房东的存在"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -405,14 +404,36 @@
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
+          
+        </div>
       
 
       
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/01/01/Linux——基础知识回顾/" rel="next" title="Linux——基础知识回顾">
+                <i class="fa fa-chevron-left"></i> Linux——基础知识回顾
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </div>
@@ -422,309 +443,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/27/TwoSum/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jaxon Su">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="SJH 的流水账">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/27/TwoSum/" itemprop="url">两数之和</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-27T20:20:05+08:00">
-                2019-04-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode刷题记录/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode刷题记录</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>坚持就是胜利，开始刷题之旅</p>
-<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p>
-<p>你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。</p>
-<p>示例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">给定 nums = [2, 7, 11, 15], target = 9</span><br><span class="line"></span><br><span class="line">因为 nums[0] + nums[1] = 2 + 7 = 9</span><br><span class="line"></span><br><span class="line">所以返回 [0, 1]</span><br></pre></td></tr></table></figure></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/27/TwoSum/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/23/Java内存区域/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jaxon Su">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="SJH 的流水账">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/23/Java内存区域/" itemprop="url">Java内存区域</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-23T12:20:08+08:00">
-                2019-04-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java虚拟机/" itemprop="url" rel="index">
-                    <span itemprop="name">Java虚拟机</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Java内存分布虽然对于入门的Java初学者来说是透明的，上课念PPT的老师也永远不会跟你提及这些概念，顶多在继承封装多态上让你背一些概念性的东西，但是都说知其然知其所以然，作为Java虚拟机知识体系基础的Java内存是如何进行管理的呢？理解了Java虚拟机的运行原理，对于排除代码BUG和程序性能优化有非常大的好处<br><img src="/2019/04/23/Java内存区域/JVM.webp" title="内存分布"><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/23/Java内存区域/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
-  </nav>
-
 
 
           </div>
@@ -732,6 +455,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -989,6 +716,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

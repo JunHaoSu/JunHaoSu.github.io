@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="装饰模式装饰模式并不影响对象的基础属性，而是作为装饰者赋予他的其他属性，比如人穿衣服，脱了衣服人还是人，和建造者模式相比，装饰者模式具有不确定性，作为建造者来说，建造的对象一定时固定的。这就是建造者和装饰者的区别，那么作为装饰赋予对象其他的职责为什么不使用继承呢？装饰者相比于继承的好处是免去了继承把装饰过程暴露给了客户端。  装饰模式(Decorator)，动态的给一个对象添加一些额外的职责，就增">
+<meta name="description" content="装饰模式装饰模式并不影响对象的核心属性，而是作为装饰者赋予他的其他属性，比如人穿衣服，脱了衣服人还是人，和建造者模式相比，装饰者模式具有不确定性，作为建造者来说，建造的对象一定时固定的。这就是建造者和装饰者的区别，那么作为装饰赋予对象其他的职责为什么不使用继承呢？装饰者相比于继承的好处是免去了继承把装饰过程暴露给了客户端，并且装饰模式更加的灵活。  装饰模式(Decorator)，动态的给一个对象">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式——装饰模式">
 <meta property="og:url" content="http://yoursite.com/2019/12/08/设计模式——装饰模式/index.html">
 <meta property="og:site_name" content="SJH 的流水账">
-<meta property="og:description" content="装饰模式装饰模式并不影响对象的基础属性，而是作为装饰者赋予他的其他属性，比如人穿衣服，脱了衣服人还是人，和建造者模式相比，装饰者模式具有不确定性，作为建造者来说，建造的对象一定时固定的。这就是建造者和装饰者的区别，那么作为装饰赋予对象其他的职责为什么不使用继承呢？装饰者相比于继承的好处是免去了继承把装饰过程暴露给了客户端。  装饰模式(Decorator)，动态的给一个对象添加一些额外的职责，就增">
+<meta property="og:description" content="装饰模式装饰模式并不影响对象的核心属性，而是作为装饰者赋予他的其他属性，比如人穿衣服，脱了衣服人还是人，和建造者模式相比，装饰者模式具有不确定性，作为建造者来说，建造的对象一定时固定的。这就是建造者和装饰者的区别，那么作为装饰赋予对象其他的职责为什么不使用继承呢？装饰者相比于继承的好处是免去了继承把装饰过程暴露给了客户端，并且装饰模式更加的灵活。  装饰模式(Decorator)，动态的给一个对象">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/12/08/设计模式——装饰模式/装饰者模式.png">
-<meta property="og:updated_time" content="2019-12-22T11:45:33.170Z">
+<meta property="og:updated_time" content="2020-01-12T06:59:54.522Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式——装饰模式">
-<meta name="twitter:description" content="装饰模式装饰模式并不影响对象的基础属性，而是作为装饰者赋予他的其他属性，比如人穿衣服，脱了衣服人还是人，和建造者模式相比，装饰者模式具有不确定性，作为建造者来说，建造的对象一定时固定的。这就是建造者和装饰者的区别，那么作为装饰赋予对象其他的职责为什么不使用继承呢？装饰者相比于继承的好处是免去了继承把装饰过程暴露给了客户端。  装饰模式(Decorator)，动态的给一个对象添加一些额外的职责，就增">
+<meta name="twitter:description" content="装饰模式装饰模式并不影响对象的核心属性，而是作为装饰者赋予他的其他属性，比如人穿衣服，脱了衣服人还是人，和建造者模式相比，装饰者模式具有不确定性，作为建造者来说，建造的对象一定时固定的。这就是建造者和装饰者的区别，那么作为装饰赋予对象其他的职责为什么不使用继承呢？装饰者相比于继承的好处是免去了继承把装饰过程暴露给了客户端，并且装饰模式更加的灵活。  装饰模式(Decorator)，动态的给一个对象">
 <meta name="twitter:image" content="http://yoursite.com/2019/12/08/设计模式——装饰模式/装饰者模式.png">
 
 
@@ -353,7 +353,7 @@
       
 
       
-        <h2 id="装饰模式"><a href="#装饰模式" class="headerlink" title="装饰模式"></a>装饰模式</h2><p>装饰模式并不影响对象的基础属性，而是作为装饰者赋予他的其他属性，比如人穿衣服，脱了衣服人还是人，和建造者模式相比，装饰者模式具有不确定性，作为建造者来说，建造的对象一定时固定的。这就是建造者和装饰者的区别，那么作为装饰赋予对象其他的职责为什么不使用继承呢？装饰者相比于继承的好处是免去了继承把装饰过程暴露给了客户端。</p>
+        <h2 id="装饰模式"><a href="#装饰模式" class="headerlink" title="装饰模式"></a>装饰模式</h2><p>装饰模式并不影响对象的核心属性，而是作为装饰者赋予他的其他属性，比如人穿衣服，脱了衣服人还是人，和建造者模式相比，装饰者模式具有不确定性，作为建造者来说，建造的对象一定时固定的。这就是建造者和装饰者的区别，那么作为装饰赋予对象其他的职责为什么不使用继承呢？装饰者相比于继承的好处是免去了继承把装饰过程暴露给了客户端，并且装饰模式更加的灵活。</p>
 <blockquote>
 <p><strong><em>装饰模式(Decorator)</em></strong>，动态的给一个对象添加一些额外的职责，就增加功能来说，装饰模式比生成子类更加灵活。</p>
 </blockquote>
@@ -368,7 +368,7 @@
 </ul>
 <p>代码如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Shape</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Circle</span> <span class="keyword">implements</span> <span class="title">Shape</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Shape:Circle"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Rectangle</span> <span class="keyword">implements</span> <span class="title">Shape</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Shape:Rectangle"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">ShapeDecorator</span> <span class="keyword">implements</span> <span class="title">Shape</span> </span>&#123;</span><br><span class="line">    <span class="keyword">protected</span> Shape decoratedShape;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ShapeDecorator</span><span class="params">(Shape decoratedShape)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.decoratedShape = decoratedShape;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        decoratedShape.draw();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RedShapeDecorator</span> <span class="keyword">extends</span> <span class="title">ShapeDecorator</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">RedShapeDecorator</span><span class="params">(Shape decoratedShape)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(decoratedShape);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        decoratedShape.draw();</span><br><span class="line">        setRedBorder(decoratedShape);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setRedBorder</span><span class="params">(Shape decoratedShape)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Border Color: Red"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GreenShapeDecorator</span> <span class="keyword">extends</span> <span class="title">ShapeDecorator</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">GreenShapeDecorator</span><span class="params">(Shape decoratedShape)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(decoratedShape);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        decoratedShape.draw();</span><br><span class="line">        setGreenBorder(decoratedShape);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setGreenBorder</span><span class="params">(Shape decoratedShape)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Border Color: Green"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DecoratorPattern</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        Shape circle = <span class="keyword">new</span> Circle();</span><br><span class="line">        Shape Rectangle = <span class="keyword">new</span> Rectangle();</span><br><span class="line">        ShapeDecorator redCicle = <span class="keyword">new</span> RedShapeDecorator(circle);</span><br><span class="line">        ShapeDecorator redRectangle = <span class="keyword">new</span> RedShapeDecorator(Rectangle);</span><br><span class="line">        ShapeDecorator greenCicle = <span class="keyword">new</span> GreenShapeDecorator(circle);</span><br><span class="line">        ShapeDecorator greenRectangle = <span class="keyword">new</span> GreenShapeDecorator(redRectangle);</span><br><span class="line">        redCicle.draw();</span><br><span class="line">        redRectangle.draw();</span><br><span class="line">        greenCicle.draw();</span><br><span class="line">        greenRectangle.draw();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>常用情况下，ConcreteComponnet只有一个类，不需用抽象的时候，Decorator作为Component的一个子类就可以了。<br>相当于装饰类继承自具体的对象，然后再进行泛化成各种各样的装饰类。</p>
+<p>常用情况下，ConcreteComponnet只有一个类，不需用抽象的时候，Decorator作为Component的一个子类就可以了。<br>相当于装饰类继承自具体的对象，然后再进行泛化成各种各样的装饰类。<br>那么此时就相当于装饰类继承了原始类，但是这个装饰类是一个抽象类，可以通过抽象类的灵活性对原始类进行装饰活动。</p>
 
       
     </div>
@@ -402,6 +402,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/01/01/Linux——基础知识回顾/" rel="prev" title="Linux——基础知识回顾">
+                Linux——基础知识回顾 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -480,7 +484,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -491,7 +495,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -502,7 +506,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -589,7 +593,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
