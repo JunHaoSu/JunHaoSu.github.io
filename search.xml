@@ -12,17 +12,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Linux——基础知识回顾]]></title>
-    <url>%2F2020%2F01%2F01%2FLinux%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%9B%9E%E9%A1%BE%2F</url>
-    <content type="text"></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[设计模式——装饰模式]]></title>
     <url>%2F2019%2F12%2F08%2F%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[装饰模式装饰模式并不影响对象的核心属性，而是作为装饰者赋予他的其他属性，比如人穿衣服，脱了衣服人还是人，和建造者模式相比，装饰者模式具有不确定性，作为建造者来说，建造的对象一定时固定的。这就是建造者和装饰者的区别，那么作为装饰赋予对象其他的职责为什么不使用继承呢？装饰者相比于继承的好处是免去了继承把装饰过程暴露给了客户端，并且装饰模式更加的灵活。 装饰模式(Decorator)，动态的给一个对象添加一些额外的职责，就增加功能来说，装饰模式比生成子类更加灵活。 下面时装饰者模式的类图。 Component定义一个接口，可以给对象动态的添加职责。 ConcreteComponet是定义的具体对象。 Decorator是装饰抽象类，继承了Component，从外类扩展Component的功能，对于Component来说，并不需要知道Decorator的存在。 ConcreteDecorator是具体的装饰对象，给Component添加职责。 代码如下： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576interface Shape &#123; void draw();&#125;class Circle implements Shape &#123; @Override public void draw() &#123; System.out.println("Shape:Circle"); &#125;&#125;class Rectangle implements Shape &#123; @Override public void draw() &#123; System.out.println("Shape:Rectangle"); &#125;&#125;abstract class ShapeDecorator implements Shape &#123; protected Shape decoratedShape; public ShapeDecorator(Shape decoratedShape) &#123; this.decoratedShape = decoratedShape; &#125; public void draw() &#123; decoratedShape.draw(); &#125;&#125;class RedShapeDecorator extends ShapeDecorator &#123; public RedShapeDecorator(Shape decoratedShape) &#123; super(decoratedShape); &#125; @Override public void draw() &#123; decoratedShape.draw(); setRedBorder(decoratedShape); &#125; private void setRedBorder(Shape decoratedShape) &#123; System.out.println("Border Color: Red"); &#125;&#125;class GreenShapeDecorator extends ShapeDecorator&#123; public GreenShapeDecorator(Shape decoratedShape) &#123; super(decoratedShape); &#125; @Override public void draw() &#123; decoratedShape.draw(); setGreenBorder(decoratedShape); &#125; private void setGreenBorder(Shape decoratedShape) &#123; System.out.println("Border Color: Green"); &#125;&#125;public class DecoratorPattern &#123; public static void main(String args[]) &#123; Shape circle = new Circle(); Shape Rectangle = new Rectangle(); ShapeDecorator redCicle = new RedShapeDecorator(circle); ShapeDecorator redRectangle = new RedShapeDecorator(Rectangle); ShapeDecorator greenCicle = new GreenShapeDecorator(circle); ShapeDecorator greenRectangle = new GreenShapeDecorator(redRectangle); redCicle.draw(); redRectangle.draw(); greenCicle.draw(); greenRectangle.draw(); &#125;&#125; 常用情况下，ConcreteComponnet只有一个类，不需用抽象的时候，Decorator作为Component的一个子类就可以了。相当于装饰类继承自具体的对象，然后再进行泛化成各种各样的装饰类。那么此时就相当于装饰类继承了原始类，但是这个装饰类是一个抽象类，可以通过抽象类的灵活性对原始类进行装饰活动。]]></content>
