@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Linux中top命令结果详解]]></title>
+    <url>%2F2020%2F03%2F28%2FLinux%E4%B8%ADtop%E5%91%BD%E4%BB%A4%E7%BB%93%E6%9E%9C%E8%AF%A6%E8%A7%A3%2F</url>
+    <content type="text"><![CDATA[top命令作为监控系统运行最常用的命令。初次去看它的面板是很迷惑的，甚至看过很多次的解析也没能记得住，所以在这里进行总结归纳，再让自己记一遍。 命令作用top命令提供了实时的对系统处理器的状态监视.它将显示系统中CPU最“敏感”的任务列表.该命令可以按CPU使用.内存使用和执行时间对任务进行排序；而且该命令的很多特性都可以通过交互式命令或者在个人定制文件中进行设定。实时数据如下图显示： 我们看到整个界面分为两个部分，上半部分主要显示总的系统资源使用情况。下半部分显示了进程的资源使用情况。 上半部分第一行 字符 含义 top - 14:25:03 当前系统时间 up 5:03 系统已运行时间 1 user 在线用户数 loadaverage: 0.97,0.43,0.26 系统负载。分别是1分钟，5分钟，15分钟的平均值 第二行 字符 含义 任务：374 total 总进程数 1 running 正在运行的进程数 300 sleeping 睡眠状态的进程数 0 stopped 停止的进程数 1 zombie 僵尸进程数 第三行第三行主要显示CPU的占用率 字符 含义 %Cpu(s): 4.4us 用户进程的CPU占用率 1.6 sy 系统CPU占用率 0.0 ni 用户进程空间内改变过优先级的进程占用CPU百分比 93.9 id CPU空闲率 0.0 wa 等待IO的CPU时间百分比 0.0 hi 硬中断占用CPU的百分比 0.1 si 软中断占用CPU的百分比 0.0 st 虚拟机占用CPU的百分比 第四行第四行主要显示内存的占用率。KiB Mem 表示以KB为单位 字符 含义 16142048 total 物理内存总量 3908996 free 空闲的内存总量 5087380 used 使用的物理内存总量 7145672 buff/cache 用作内存缓存的内存量 第五行第五行主要显示了交换区的占用率。KiB Swap 表示以KB为单位字符 | 含义 | -2097148 tatal | 交换区总量2097148 free | 空闲的交换区总量0 used | 使用的交换区总量9832576 avail Mem | 可用内存空间 下半部分这里主要显示的是进程的资源占用情况。 字符 含义 PID 进程号 USER 进程的创建用户 PR 进程优先级 NI nice值，越小优先级越高。最小-20。最大20 VIRT 使用的虚拟内存总量。单位KB VIRT=SWAP+RES RES 进程使用的，未被换出的物理内存大小，单位KB。RES=CODE+DATA SHR 共享内存大小，单位KB S 进程状态。R=运行，S=可中断睡眠，D=不可中断睡眠，Z=僵尸状态 %CPU 进程占用CPU百分比 %MEM 进程占用内存百分比 TIME+ 进程已运行时间 COMMAND 进程的名称]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[设计模式——模板方法模式]]></title>
     <url>%2F2020%2F03%2F28%2F%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[模板方法模式，顾名思义就是使用一个模板去约束子类的实现过程，抽出分类一个过程的公共部分，再由子类去实现每个过程不同的具体实现。将重复的代码固定下来，共有的流程抽象出来，封装成模板，就是我们要讲的模板方法模式。 模板方法模式，定义一个操作中的算法的骨架，而将一些步骤，而将一些步骤延迟到子类中。模板方法使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。 类图就不画了，很简单。直接上代码，看起来很简单。 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455abstract class WriteArticle&#123; abstract void writeIntroduction(); abstract void writeContent(); abstract void writeLast(); public final void writeAnArticle()&#123; writeIntroduction(); writeContent(); writeLast(); &#125;&#125;class AWriteArticle extends WriteArticle&#123; @Override void writeIntroduction() &#123; System.out.println("张三写前言"); &#125; @Override void writeContent() &#123; System.out.println("张三写正文"); &#125; @Override void writeLast() &#123; System.out.println("张三写结语"); &#125;&#125;class BWriteArticle extends WriteArticle&#123; @Override void writeIntroduction() &#123; System.out.println("李四写前言"); &#125; @Override void writeContent() &#123; System.out.println("李四写正文"); &#125; @Override void writeLast() &#123; System.out.println("李四写结语"); &#125;&#125;public class TemplateMethod &#123; public static void main(String[] args)&#123; WriteArticle zhangsan = new AWriteArticle(); zhangsan.writeAnArticle(); WriteArticle lisi = new BWriteArticle(); lisi.writeAnArticle(); &#125;&#125; 核心思想是模板方法模式通过把不变形为搬到超类中，去除子类中重复代码体现它的优势。]]></content>
